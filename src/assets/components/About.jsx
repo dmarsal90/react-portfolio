@@ -111,7 +111,7 @@ export const About = () => {
                             <div className="timeline-item">
                               <div className="circle-dot"></div>
                               <h3 className="timeline-date">
-                                <i className="fa fa-calendar"></i>2021- feb 2022
+                                <i className="fa fa-calendar"></i>2021- Present
                               </h3>
                               <h4 className="timeline-title">
                               Web Developer
@@ -126,7 +126,7 @@ export const About = () => {
                                 necessitatibus dolorum possimus.
                               </p>
                             </div>
-                            <div className="timeline-item">
+                            {/* <div className="timeline-item">
                               <div className="circle-dot"></div>
                               <h3 className="timeline-date">
                                 <i className="fa fa-calendar"></i>feb 2022 - Present
@@ -143,7 +143,7 @@ export const About = () => {
                                 molestias soluta ipsam voluptatum minima
                                 necessitatibus dolorum possimus.
                               </p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

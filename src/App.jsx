@@ -6,6 +6,8 @@ import {Banner} from './assets/components/Banner';
 import {About} from "./assets/components/About";
 import {Skills} from "./assets/components/Skills";
 import {Projects} from "./assets/components/Projects";
+import {Contact} from "./assets/components/Contact";
+
 
 function App() {
     const [count, setCount] = useState(0)

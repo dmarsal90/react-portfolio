@@ -91,7 +91,8 @@
         ],
         "shots": []
       }
-    }
+    },
+    "close": "Cerrar"
   },
   "experience": {
     "title": "Experiencia profesional",
@@ -184,7 +185,7 @@
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
-    "cv": "Descargar CV (inglés)",
+    "cv": "Descargar CV",
     "links": "Enlaces"
   }
 }

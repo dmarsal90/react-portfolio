@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "title": "David Marsal Ivars | Full-Stack-Entwickler (Backend-Engineering)",
+    "description": "Full-Stack-Entwickler mit Schwerpunkt Backend-Engineering. Skalierbare Webanwendungen, REST-APIs und Integrationen mit PHP, Symfony und Laravel."
+  },
+  "nav": {
+    "home": "Start",
+    "projects": "Projekte",
+    "experience": "Erfahrung",
+    "skills": "Fähigkeiten",
+    "about": "Über mich",
+    "connect": "Kontakt",
+    "skip": "Zum Inhalt springen",
+    "language": "Sprache",
+    "menu": "Menü ein- oder ausblenden"
+  },
+  "hero": {
+    "tag": "David Marsal Ivars",
+    "title": "Full-Stack-Entwickler mit Schwerpunkt Backend-Engineering",
+    "text": "Ich entwickle skalierbare Webanwendungen, APIs und Integrationen mit PHP, Symfony und Laravel. Ich modernisiere Legacy-Systeme und veröffentliche Open-Source-Bibliotheken.",
+    "viewProjects": "Projekte ansehen",
+    "contact": "Kontakt aufnehmen"
+  },
+  "projects": {
+    "title": "Ausgewählte Projekte",
+    "subtitle": "Produkte und Bibliotheken, die ich entwerfe, entwickle und pflege.",
+    "caseStudy": "Fallstudie",
+    "problem": "Das Problem",
+    "solution": "Die Lösung",
+    "decisions": "Technische Entscheidungen",
+    "screenshot": "Screenshot",
+    "preRelease": "Vorabversion",
+    "items": {
+      "matchly": {
+        "title": "Matchly",
+        "summary": "Open-Source-Tool für die Jobsuche im Remote-Bereich: sammelt Stellenangebote aus 13 öffentlichen Quellen, bewertet, wie gut jedes zu deinem Profil passt, verwaltet Bewerbungen und bereitet Vorstellungsgespräche vor.",
+        "problem": "Die Suche nach Remote-Arbeit bedeutet, viele Jobportale zu prüfen, Duplikate auszusortieren und jede Bewerbung von Hand anzupassen, ohne genau zu wissen, wie gut man auf eine Stelle passt.",
+        "solution": "Matchly sammelt und bereinigt die Angebote, bewertet die Übereinstimmung zwischen jedem Angebot und deinem Profil, hilft dir, eine Bewerbung vorzubereiten, die du prüfst und freigibst (es wird nichts für dich versendet), verfolgt jede Bewerbung und bereitet Vorstellungsgespräche vor.",
+        "decisions": [
+          "Backend mit Laravel 13 und PHP 8.4 und Oberfläche mit Inertia und Vue 3 (TypeScript), verfügbar auf Spanisch, Englisch und Portugiesisch.",
+          "PostgreSQL zur Speicherung, Redis und Horizon für Hintergrundaufgaben und Reverb für Echtzeit-Updates.",
+          "Qualitätssicherung: Tests mit Pest und Vitest, statische Analyse mit Larastan, CI und ein Architekturtest, der den Produktnamen an genau einer Stelle definiert hält.",
+          "Container mit Docker für eine reproduzierbare Einrichtung."
+        ],
+        "shots": [
+          "Stellenangebote mit Match-Wert",
+          "Board zur Bewerbungsverfolgung",
+          "Übersicht zur Verbesserung der Suche"
+        ]
+      },
+      "ecommerce": {
+        "title": "E-Commerce",
+        "summary": "Onlineshop, aufgeteilt in eine REST-API und ein unabhängiges, mehrsprachiges Storefront.",
+        "problem": "Ein Shop braucht Katalog, Warenkorb, Checkout und Konten, die für Gäste und Kunden gleichermaßen funktionieren, in mehreren Sprachen und ohne das Frontend an das Backend zu koppeln.",
+        "solution": "Eine Laravel-REST-API (Token-Authentifizierung, Gastwarenkorb, Gutscheine, Bestellungen und Rollenrechte), die von einem getrennten Next.js-Storefront in sechs Sprachen mit hellem und dunklem Theme genutzt wird.",
+        "decisions": [
+          "Bearer-Tokens (Sanctum) statt Cookies, damit das Storefront entkoppelt bleibt. Gastwarenkörbe reisen im Header X-Cart-Token und überstehen die Anmeldung.",
+          "Next.js App Router mit striktem TypeScript und funktionsbasierter Struktur. Funktionen importieren einander nur über ihren öffentlichen Index.",
+          "Jede API-Antwort wird mit Zod geparst, bevor sie eine Komponente erreicht, und der API-Client ist ein Port, den Tests durch ein Fake-Fetch ersetzen.",
+          "Sechs Sprachen, mit von der API anhand des Accept-Language-Headers übersetzten E-Mails, und ein Theme, das vor dem ersten Rendern gesetzt wird, um Flackern zu vermeiden."
+        ],
+        "shots": [
+          "Startseite des Shops",
+          "Produktseite",
+          "Warenkorb"
+        ]
+      },
+      "zipwarden": {
+        "title": "ZipWarden",
+        "summary": "Sicheres Lesen und Entpacken von ZIP-Dateien mit Schutz vor Zip Slip und Zip Bombs, mit gleichwertigen Implementierungen in PHP und JavaScript.",
+        "problem": "Das Entpacken von Archiven, die Nutzer hochladen, kann Dateien außerhalb des Zielverzeichnisses schreiben oder Festplatte, Speicher und CPU erschöpfen.",
+        "solution": "Eine Bibliothek, die nicht vertrauenswürdige Archive unter strengen Grenzwerten öffnet und in ein privates Staging-Verzeichnis entpackt. Das Ergebnis wird nur dann ins Ziel verschoben, wenn jeder Eintrag die Prüfung bestanden hat, und jeder Fehler löscht alles Geschriebene.",
+        "decisions": [
+          "Weist Zip Slip ab: ../-Segmente, absolute Pfade, symbolische Links und NUL-Bytes in Namen.",
+          "Weist Zip Bombs ab durch Grenzwerte für komprimierte und unkomprimierte Größe, Anzahl der Einträge, Kompressionsverhältnis, Verzeichnistiefe, verschachtelte Archive und Zeit.",
+          "Eine gemeinsame Spezifikation mit zwei unabhängigen Implementierungen, PHP und JavaScript, die ihr folgen.",
+          "Framework-unabhängiger Kern mit optionalen Laravel- und Symfony-Adaptern in getrennten Namespaces, getestet mit gezielt gebauten bösartigen Archiven."
+        ],
+        "shots": []
+      },
+      "whistleblower": {
+        "title": "Whistleblower",
+        "summary": "Internes Hinweisgebersystem für Laravel und Symfony auf Grundlage des spanischen Gesetzes Ley 2/2023.",
+        "problem": "Unternehmen müssen einen internen Meldekanal mit Anonymität, gesetzlichen Fristen, Nachvollziehbarkeit und Datenaufbewahrung anbieten, und diese Regeln sind mühsam richtig umzusetzen.",
+        "solution": "Ein Paket mit anonymen Meldungen (ein einmaliger Tracking-Code, von dem nur der Hash gespeichert wird), anonymer Zwei-Wege-Kommunikation, Fristwarnungen, Audit-Protokoll und automatischer Datenaufbewahrung, bereitgestellt als JSON-API.",
+        "decisions": [
+          "Die Geschäftsregeln liegen in einem framework-unabhängigen Kern. Laravel (Eloquent) und Symfony (Doctrine DBAL) sind dünne Adapter, die dasselbe Verhalten ausführen.",
+          "Verschlüsselung im Ruhezustand für Betreff, Beschreibung, Kontaktdaten, Entscheidung und Nachrichten.",
+          "Gesetzliche Fristen mit geplanten Warnungen und eine Aufbewahrung, die inaktive Meldungen anonymisiert und Registereinträge nach zehn Jahren löscht.",
+          "Audit-Protokoll der Statuswechsel und jedes Öffnens einer Meldung durch einen Bearbeiter, ohne Inhalte zu speichern. PHPStan Level 8 und CI."
+        ],
+        "shots": []
+      }
+    },
+    "close": "Schließen"
+  },
+  "experience": {
+    "title": "Berufserfahrung",
+    "present": "heute",
+    "items": {
+      "meganet": {
+        "role": "Webentwickler",
+        "text": "Neue Funktionen und Wartung von Webanwendungen mit Laravel im Backend und Vue.js im Frontend."
+      },
+      "motorflash": {
+        "role": "Backend-Entwickler",
+        "text": "Entwicklung von REST-APIs zur Anbindung externer Systeme und Migration von Legacy-Projekten auf moderne Plattformen mit besserer Leistung und Sicherheit."
+      },
+      "cyberline": {
+        "role": "Webentwickler",
+        "text": "REST- und SOAP-APIs zur Anbindung externer Systeme an die Plattform, Legacy-Migrationen und Single Sign-on (SSO)."
+      },
+      "flexvision": {
+        "role": "Full-Stack-Entwickler",
+        "text": "SQL-Performance-Optimierung, Integration externer APIs, Behebung kritischer Fehler und Sicherheitslücken sowie Modernisierung von Legacy-Systemen mit SOLID-Prinzipien und objektorientiertem Design."
+      },
+      "lapida": {
+        "role": "Full-Stack-Entwickler",
+        "text": "Datenbankpflege und Abfrageoptimierung, Behebung kritischer Fehler, asynchrone Komponenten und modulares CSS mit Sass und Less."
+      },
+      "cdai": {
+        "role": "Projektmanager",
+        "text": "Schätzung von Ressourcen und Zeitplänen, Projekt- und Prozesspläne, Steuerung von Risiken und Änderungen sowie Leitung des Teams."
+      },
+      "freelance": {
+        "role": "Freiberuflicher Full-Stack-Entwickler",
+        "place": "Kunden in Chile, Dänemark, den USA und Spanien",
+        "text": "Fehlerbehebung, Fertigstellung unvollendeter Produkte und Migration von Legacy-Systemen, remote."
+      }
+    }
+  },
+  "skills": {
+    "title": "Technische Kompetenzen",
+    "subtitle": "Die Technologien und Praktiken, mit denen ich arbeite.",
+    "groups": {
+      "backend": "Backend-Engineering",
+      "frontend": "Frontend-Entwicklung",
+      "databases": "Datenbanken",
+      "architecture": "Softwarearchitektur",
+      "devops": "DevOps und Werkzeuge",
+      "testing": "Testing und Qualität"
+    },
+    "architecture": [
+      "Domain-driven Design (DDD)",
+      "Hexagonale Architektur",
+      "CQRS",
+      "SOLID",
+      "REST-API-Design"
+    ]
+  },
+  "about": {
+    "title": "Über mich",
+    "text": "Webentwickler mit über 7 Jahren Erfahrung, spezialisiert auf PHP mit Full-Stack-Profil. Mein Schwerpunkt liegt darauf, die Leistung bestehender Produkte zu verbessern, Legacy-Systeme zu modernisieren und neue Projekte von Grund auf zu entwickeln.",
+    "education": "Ausbildung",
+    "certifications": "Zertifizierungen",
+    "languages": "Sprachen",
+    "degrees": {
+      "engineering": "Informatik (Ingenieurstudium)",
+      "crypto": "Postgraduierte Weiterbildung in Kryptografie"
+    },
+    "certs": [
+      "Laravel, MySQL und SQL, Git (TestDome, Apr. 2022)",
+      "PHP (TestDome, Jan. 2023)",
+      "EF SET Englisch (Apr. 2022)",
+      "Scrum Foundation SFPC (CertiProf, Jan. 2023)"
+    ],
+    "spoken": [
+      "Spanisch: Muttersprache",
+      "Englisch: fortgeschritten"
+    ]
+  },
+  "contact": {
+    "title": "Kontakt",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail-Adresse",
+    "phone": "Telefon (optional)",
+    "message": "Nachricht",
+    "send": "Senden",
+    "sending": "Wird gesendet...",
+    "success": "Nachricht erfolgreich gesendet.",
+    "error": "Etwas ist schiefgelaufen, bitte versuche es später erneut.",
+    "orEmail": "Lieber per E-Mail? Schreib an",
+    "privacy": "Deine Angaben werden nur verwendet, um auf deine Nachricht zu antworten."
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "cv": "Lebenslauf herunterladen",
+    "links": "Links"
+  }
+}

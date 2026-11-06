@@ -91,7 +91,8 @@
         ],
         "shots": []
       }
-    }
+    },
+    "close": "Close"
   },
   "experience": {
     "title": "Professional experience",
@@ -184,7 +185,7 @@
   },
   "footer": {
     "rights": "All rights reserved.",
-    "cv": "Download CV (English)",
+    "cv": "Download CV",
     "links": "Links"
   }
 }

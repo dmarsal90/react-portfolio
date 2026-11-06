@@ -88,7 +88,7 @@ nav.navbar {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 9999;
+  z-index: 1030;
   transition:  0.32s ease-in-out;
 }
 nav.navbar.scrolled {
@@ -365,7 +365,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .proj-card {
   position: relative;
   aspect-ratio: 16 / 10;
-  margin-bottom: 24px;
   border-radius: 30px;
   overflow: hidden;
   background: #151515;
@@ -751,38 +750,40 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 13px;
 }
-.proj-pair {
-  margin-bottom: 28px;
-}
 .proj-grid {
   display: grid;
   gap: 24px;
-  margin-bottom: 12px;
 }
 @media (min-width: 992px) {
   .proj-grid { grid-template-columns: 1fr 1fr; }
 }
-.case-study {
-  margin-bottom: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.04);
+.proj-case-btn {
+  margin-right: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.modal-content.case-modal {
+  --bs-modal-bg: #151515;
+  --bs-modal-color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 24px;
+  background: #151515;
+  color: #fff;
   text-align: left;
 }
-.case-study summary {
-  padding: 14px 22px;
-  font-weight: 700;
-  cursor: pointer;
+.case-modal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
-.case-study-body {
-  padding: 0 22px 22px;
-}
-.case-study-body h4 {
+.case-modal h4 {
   margin: 18px 0 6px;
   font-size: 18px;
   font-weight: 700;
 }
-.case-study-body p, .case-study-body li {
+.case-modal p, .case-modal li {
   width: 100%;
   margin: 0 0 6px;
   color: #d4d4d4;
@@ -790,7 +791,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   line-height: 1.5em;
   text-align: left;
 }
-.case-study-body ul {
+.case-modal ul {
   padding-left: 20px;
 }
 .case-study-text {

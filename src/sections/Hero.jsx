@@ -5,7 +5,7 @@ import TrackVisibility from "../components/TrackVisibility";
 import { useI18n } from "../i18n";
 
 export const Hero = () => {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   return (
     <section className="banner" id="home">
       <Container>
@@ -20,6 +20,7 @@ export const Hero = () => {
                   <div className="hero-actions">
                     <a className="connect-btn" href="#projects">{t.hero.viewProjects} <ArrowRightCircle size={25} aria-hidden="true" /></a>
                     <a className="hero-link" href="#connect">{t.hero.contact}</a>
+                    <a className="hero-link" href={`/David_Marsal_Ivars_CV_${locale.toUpperCase()}.pdf`} download>{t.footer.cv}</a>
                   </div>
                 </div>}
             </TrackVisibility>

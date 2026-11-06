@@ -841,3 +841,34 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 @media (prefers-reduced-motion: reduce) {
   .banner img, html { animation: none; scroll-behavior: auto; }
 }
+
+/************ Collapsed navigation ************/
+@media (max-width: 1199px) {
+  nav.navbar .navbar-collapse {
+    margin-top: 8px;
+    padding: 12px 20px 20px;
+    border-radius: 20px;
+    background: #121212;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    padding: 10px 0;
+  }
+  nav.navbar span.navbar-text {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 8px;
+  }
+  .navbar-text .social-icon {
+    display: flex;
+    gap: 8px;
+  }
+  .navbar-text .social-icon a,
+  .navbar-text .lang-switcher,
+  .navbar-text a.vvd {
+    margin-left: 0;
+  }
+  .navbar-text a.vvd {
+    padding: 12px 24px;
+    white-space: nowrap;
+  }
+}

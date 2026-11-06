@@ -5,7 +5,7 @@ export const ProjectCard = ({ title, description, stack, links }) => (
     <article className="proj-card">
       <h3>{title}</h3>
       <p>{description}</p>
-      <ul className="proj-stack">
+      <ul className="chips">
         {stack.map((tech) => <li key={tech}>{tech}</li>)}
       </ul>
       <div className="proj-links">

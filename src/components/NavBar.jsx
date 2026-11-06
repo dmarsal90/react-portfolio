@@ -36,7 +36,7 @@ export const NavBar = () => {
   }, []);
 
   return (
-    <Navbar expand="md" collapseOnSelect className={scrolled ? "scrolled" : ""}>
+    <Navbar expand="xl" collapseOnSelect className={scrolled ? "scrolled" : ""}>
       <Container>
         <Navbar.Brand href="#home">
           <img src={logo} alt="David Marsal" />

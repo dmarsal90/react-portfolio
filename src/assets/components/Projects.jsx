@@ -43,7 +43,7 @@ export const Projects = () => (
         <Col size={12}>
           <TrackVisibility>
             {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+              <div className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                 <h2>Projects</h2>
                 <p>Open-source projects I build and maintain.</p>
                 <Row>

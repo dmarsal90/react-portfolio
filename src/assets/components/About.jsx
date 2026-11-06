@@ -1,3 +1,5 @@
+import TrackVisibility from "./TrackVisibility";
+
 const education = [
   { date: "Sep 2014 – Jul 2019", title: "Computer Engineering", place: "Universidad Ignacio Agramonte" },
   { date: "Dec 2020 – May 2021", title: "Postgraduate in Cryptography", place: "UCI" },
@@ -32,7 +34,9 @@ const Timeline = ({ title, items }) => (
 export const About = () => (
   <section className="about section" id="about">
     <div className="container">
-      <div className="skill-bx">
+      <TrackVisibility>
+        {({ isVisible }) =>
+      <div className={`skill-bx ${isVisible ? "animate__animated animate__slideInUp" : ""}`}>
         <h2>About me</h2>
         <p>
           Web developer with over 7 years of experience, specialized in PHP with a full stack profile.
@@ -59,7 +63,8 @@ export const About = () => (
             </ul>
           </div>
         </div>
-      </div>
+      </div>}
+      </TrackVisibility>
     </div>
   </section>
 );

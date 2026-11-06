@@ -691,3 +691,21 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     font-size: 40px;
   }
 }
+
+/************ Entrance animations ************/
+.animate__animated {
+  animation-duration: 0.9s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+.animate__fadeIn { animation-name: fadeIn; }
+.animate__zoomIn { animation-name: zoomIn; }
+.animate__slideInUp { animation-name: slideInUp; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes zoomIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: none; } }
+@keyframes slideInUp { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .animate__animated {
+    animation: none;
+  }
+}

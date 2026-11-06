@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {NavBar} from './assets/components/NavBar';
@@ -10,16 +9,16 @@ import {Contact} from "./assets/components/Contact";
 
 
 function App() {
-    const [count, setCount] = useState(0)
-
     return (
         <div className="App">
             <NavBar/>
-            <Banner/>
-            <About/>
-            <Skills/>
-            <Projects/>
-            <Contact/>
+            <main>
+                <Banner/>
+                <About/>
+                <Skills/>
+                <Projects/>
+                <Contact/>
+            </main>
         </div>
     )
 }

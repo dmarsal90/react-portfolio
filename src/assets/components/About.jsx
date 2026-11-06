@@ -5,12 +5,12 @@ export const About = () => {
         <div className="row">
           <div className="skill-bx wow zoomIn">
             <div className="col-12">
-              <div class="section-title padd-15">
+              <div className="section-title padd-15">
                 <h2>About me</h2>
               </div>
             </div>
-            <div class="row">
-              <div class="about-content padd-15">
+            <div className="row">
+              <div className="about-content padd-15">
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry.<br></br> Lorem Ipsum has been the

@@ -1,4 +1,4 @@
-import colorSharp from "../img/color-sharp.png";
+import colorSharp from "../img/color-sharp.webp";
 
 const groups = [
   { title: "Languages", items: ["PHP", "JavaScript", "Java", "SQL"] },
@@ -22,6 +22,6 @@ export const Skills = () => (
         ))}
       </div>
     </div>
-    <img className="background-image-left" src={colorSharp} alt="" />
+    <img className="background-image-left" src={colorSharp} alt="" width="543" height="744" loading="lazy" decoding="async" />
   </section>
 );

@@ -1,6 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../img/color-sharp2.png";
+import matchlyImg from "../img/proj-matchly.jpg";
+import ecommerceImg from "../img/proj-ecommerce.jpg";
 import TrackVisibility from './TrackVisibility';
 
 const gh = (repo) => `https://github.com/dmarsal90/${repo}`;
@@ -11,12 +13,14 @@ const projects = [
     description: "Open-source remote job search tool: gathers listings from public sources, scores how well each fits your CV, tracks your applications and helps you prepare interviews. Available in Spanish, English and Portuguese.",
     stack: ["Laravel 13", "Vue 3", "Tailwind 4", "Docker"],
     links: [{ label: "GitHub", url: gh("Matchly") }],
+    image: matchlyImg,
   },
   {
     title: "E-commerce",
     description: "Online store split in a REST API and a multilingual storefront (6 languages): token authentication, guest cart that survives login, and validated API responses.",
     stack: ["Laravel", "Sanctum", "Next.js", "TypeScript", "Zod"],
     links: [{ label: "API", url: gh("ecommerce-api") }, { label: "Storefront", url: gh("ecommerce-front") }],
+    image: ecommerceImg,
   },
   {
     title: "ZipWarden",

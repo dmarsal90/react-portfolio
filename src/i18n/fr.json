@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "title": "David Marsal Ivars | Développeur Full Stack (Ingénierie Backend)",
+    "description": "Développeur full stack spécialisé en ingénierie backend. Applications web évolutives, API REST et intégrations avec PHP, Symfony et Laravel."
+  },
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "skills": "Compétences",
+    "about": "À propos",
+    "connect": "Me contacter",
+    "skip": "Aller au contenu",
+    "language": "Langue",
+    "menu": "Afficher ou masquer le menu"
+  },
+  "hero": {
+    "tag": "David Marsal Ivars",
+    "title": "Développeur Full Stack spécialisé en Ingénierie Backend",
+    "text": "Je conçois des applications web évolutives, des API et des intégrations avec PHP, Symfony et Laravel. Je modernise des systèmes legacy et je publie des bibliothèques open source.",
+    "viewProjects": "Voir les projets",
+    "contact": "Me contacter"
+  },
+  "projects": {
+    "title": "Projets à la une",
+    "subtitle": "Des produits et des bibliothèques que je conçois, développe et maintiens.",
+    "caseStudy": "Étude de cas",
+    "problem": "Le problème",
+    "solution": "La solution",
+    "decisions": "Décisions techniques",
+    "screenshot": "capture d'écran",
+    "preRelease": "Pré-version",
+    "items": {
+      "matchly": {
+        "title": "Matchly",
+        "summary": "Outil open source de recherche d'emploi en télétravail : rassemble les offres de 13 sources publiques, évalue à quel point chacune correspond à votre profil, suit les candidatures et prépare les entretiens.",
+        "problem": "Chercher un emploi en télétravail oblige à parcourir de nombreux sites, filtrer les doublons et adapter chaque candidature à la main, sans savoir clairement à quel point on correspond à chaque poste.",
+        "solution": "Matchly collecte et nettoie les offres, évalue la correspondance entre chacune et votre profil, vous aide à préparer une candidature que vous relisez et approuvez (rien n'est envoyé à votre place), suit chaque candidature et prépare les entretiens.",
+        "decisions": [
+          "Backend avec Laravel 13 et PHP 8.4 et interface avec Inertia et Vue 3 (TypeScript), disponible en espagnol, anglais et portugais.",
+          "PostgreSQL pour le stockage, Redis et Horizon pour les tâches en arrière-plan et Reverb pour les mises à jour en temps réel.",
+          "Garde-fous qualité : tests avec Pest et Vitest, analyse statique avec Larastan, CI et un test d'architecture qui garde le nom du produit défini à un seul endroit.",
+          "Conteneurisation avec Docker pour une mise en place reproductible."
+        ],
+        "shots": [
+          "Liste des offres avec le score de correspondance",
+          "Tableau de suivi des candidatures",
+          "Panorama pour améliorer la recherche"
+        ]
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "summary": "Boutique en ligne séparée en une API REST et une vitrine indépendante et multilingue.",
+        "problem": "Une boutique a besoin d'un catalogue, d'un panier, d'un paiement et de comptes qui fonctionnent aussi bien pour les invités que pour les clients, en plusieurs langues, sans coupler le frontend au backend.",
+        "solution": "Une API REST en Laravel (authentification par jeton, panier invité, coupons, commandes et permissions par rôle) consommée par une vitrine Next.js distincte, en six langues et avec un thème clair et sombre.",
+        "decisions": [
+          "Jetons Bearer (Sanctum) plutôt que des cookies, pour que la vitrine reste découplée. Le panier invité circule dans l'en-tête X-Cart-Token et survit à la connexion.",
+          "Next.js App Router avec TypeScript strict et une structure par fonctionnalités. Les fonctionnalités ne s'importent entre elles que par leur index public.",
+          "Chaque réponse de l'API est validée avec Zod avant d'atteindre un composant, et le client API est un port que les tests remplacent par un faux fetch.",
+          "Six langues, avec des e-mails traduits par l'API selon l'en-tête Accept-Language, et un thème appliqué avant le premier rendu pour éviter les scintillements."
+        ],
+        "shots": [
+          "Page d'accueil de la boutique",
+          "Fiche produit",
+          "Panier"
+        ]
+      },
+      "zipwarden": {
+        "title": "ZipWarden",
+        "summary": "Lecture et extraction sécurisées de ZIP qui protègent contre le zip slip et les zip bombs, avec des implémentations équivalentes en PHP et en JavaScript.",
+        "problem": "Extraire des archives envoyées par des utilisateurs peut écrire des fichiers hors du dossier de destination ou épuiser le disque, la mémoire et le processeur.",
+        "solution": "Une bibliothèque qui ouvre des archives non fiables sous des limites strictes et extrait dans un dossier temporaire privé. Le résultat n'est déplacé vers la destination que si toutes les entrées ont passé les contrôles, et tout échec supprime ce qui a été écrit.",
+        "decisions": [
+          "Rejette le zip slip : segments ../, chemins absolus, liens symboliques et octets NUL dans les noms.",
+          "Rejette les zip bombs grâce à des limites sur la taille compressée et décompressée, le nombre d'entrées, le taux de compression, la profondeur des dossiers, les archives imbriquées et la durée.",
+          "Une spécification commune avec deux implémentations indépendantes, PHP et JavaScript, qui la suivent.",
+          "Noyau indépendant du framework avec des adaptateurs optionnels Laravel et Symfony dans des espaces de noms séparés, testé avec des archives malveillantes construites exprès."
+        ],
+        "shots": []
+      },
+      "whistleblower": {
+        "title": "Whistleblower",
+        "summary": "Canal interne de signalement pour Laravel et Symfony basé sur la Ley 2/2023 espagnole.",
+        "problem": "Les entreprises doivent offrir un canal interne avec anonymat, délais légaux, traçabilité et conservation des données, et ces règles sont fastidieuses à implémenter correctement.",
+        "solution": "Un paquet avec des signalements anonymes (un code de suivi à usage unique dont seul le hash est stocké), une messagerie anonyme dans les deux sens, des alertes sur les délais, un journal d'audit et une conservation automatique des données, exposé sous forme d'API JSON.",
+        "decisions": [
+          "Les règles métier vivent dans un noyau indépendant du framework. Laravel (Eloquent) et Symfony (Doctrine DBAL) sont des adaptateurs fins qui exécutent le même comportement.",
+          "Chiffrement au repos de l'objet, de la description, des données de contact, de la décision et des messages.",
+          "Délais légaux avec alertes planifiées, et une conservation qui anonymise les signalements inactifs et supprime les entrées du registre après dix ans.",
+          "Journal d'audit des changements d'état et de chaque ouverture d'un signalement par un gestionnaire, sans stocker le contenu. PHPStan niveau 8 et CI."
+        ],
+        "shots": []
+      }
+    },
+    "close": "Fermer"
+  },
+  "experience": {
+    "title": "Expérience professionnelle",
+    "present": "Aujourd'hui",
+    "items": {
+      "meganet": {
+        "role": "Développeur Web",
+        "text": "Nouvelles fonctionnalités et maintenance d'applications web avec Laravel côté backend et Vue.js côté frontend."
+      },
+      "motorflash": {
+        "role": "Développeur Backend",
+        "text": "Développement d'API REST pour intégrer des systèmes externes et migration de projets legacy vers des plateformes modernes, avec de meilleures performances et une meilleure sécurité."
+      },
+      "cyberline": {
+        "role": "Développeur Web",
+        "text": "API REST et SOAP pour connecter des systèmes externes à la plateforme, migrations de code legacy et authentification unique (SSO)."
+      },
+      "flexvision": {
+        "role": "Développeur Full Stack",
+        "text": "Optimisation des performances SQL, intégration d'API externes, correction de bugs critiques et de failles de sécurité, et modernisation de systèmes legacy avec les principes SOLID et la conception orientée objet."
+      },
+      "lapida": {
+        "role": "Développeur Full Stack",
+        "text": "Maintenance de la base de données et optimisation des requêtes, correction de bugs critiques, composants asynchrones et CSS modulaire avec Sass et Less."
+      },
+      "cdai": {
+        "role": "Chef de projet",
+        "text": "Estimation des ressources et des plannings, plans de projet et de processus, gestion des risques et des changements, et direction de l'équipe."
+      },
+      "freelance": {
+        "role": "Développeur Full Stack Freelance",
+        "place": "Clients au Chili, au Danemark, aux États-Unis et en Espagne",
+        "text": "Correction d'erreurs, finalisation de produits inachevés et migration de systèmes legacy, en télétravail."
+      }
+    }
+  },
+  "skills": {
+    "title": "Compétences techniques",
+    "subtitle": "Les technologies et pratiques avec lesquelles je travaille.",
+    "groups": {
+      "backend": "Ingénierie backend",
+      "frontend": "Développement frontend",
+      "databases": "Bases de données",
+      "architecture": "Architecture logicielle",
+      "devops": "DevOps et outils",
+      "testing": "Tests et qualité"
+    },
+    "architecture": [
+      "Domain-driven design (DDD)",
+      "Architecture hexagonale",
+      "CQRS",
+      "SOLID",
+      "Conception d'API REST"
+    ]
+  },
+  "about": {
+    "title": "À propos",
+    "text": "Développeur web avec plus de 7 ans d'expérience, spécialisé en PHP avec un profil full stack. Je me concentre sur l'amélioration des performances de produits existants, la modernisation de systèmes legacy et le développement de nouveaux projets de A à Z.",
+    "education": "Formation",
+    "certifications": "Certifications",
+    "languages": "Langues",
+    "degrees": {
+      "engineering": "Ingénierie Informatique",
+      "crypto": "Troisième cycle en Cryptographie"
+    },
+    "certs": [
+      "Laravel, MySQL et SQL, Git (TestDome, avr. 2022)",
+      "PHP (TestDome, janv. 2023)",
+      "EF SET anglais (avr. 2022)",
+      "Scrum Foundation SFPC (CertiProf, janv. 2023)"
+    ],
+    "spoken": [
+      "Espagnol : langue maternelle",
+      "Anglais : avancé"
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Adresse e-mail",
+    "phone": "Téléphone (facultatif)",
+    "message": "Message",
+    "send": "Envoyer",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès.",
+    "error": "Une erreur s'est produite, veuillez réessayer plus tard.",
+    "orEmail": "Vous préférez l'e-mail ? Écrivez à",
+    "privacy": "Vos informations ne sont utilisées que pour répondre à votre message."
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "cv": "Télécharger le CV",
+    "links": "Liens"
+  }
+}

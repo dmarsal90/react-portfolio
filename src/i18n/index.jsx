@@ -1,8 +1,13 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import en from "./en.json";
 import es from "./es.json";
+import en from "./en.json";
+import it from "./it.json";
+import de from "./de.json";
+import pt from "./pt.json";
+import fr from "./fr.json";
 
-const dictionaries = { en, es };
+const dictionaries = { es, en, it, de, pt, fr };
+export const defaultLocale = "es";
 export const locales = Object.keys(dictionaries);
 const STORAGE_KEY = "locale";
 const isLocale = (value) => Object.hasOwn(dictionaries, value);
@@ -13,7 +18,7 @@ const detectLocale = () => {
     if (isLocale(saved)) return saved;
   } catch { /* storage may be blocked */ }
   const browser = navigator.language?.split("-")[0];
-  return isLocale(browser) ? browser : "en";
+  return isLocale(browser) ? browser : defaultLocale;
 };
 
 const I18nContext = createContext(null);

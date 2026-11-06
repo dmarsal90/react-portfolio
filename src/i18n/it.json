@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "title": "David Marsal Ivars | Sviluppatore Full Stack (Ingegneria Backend)",
+    "description": "Sviluppatore full stack specializzato in ingegneria backend. Applicazioni web scalabili, API REST e integrazioni con PHP, Symfony e Laravel."
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Progetti",
+    "experience": "Esperienza",
+    "skills": "Competenze",
+    "about": "Chi sono",
+    "connect": "Contattami",
+    "skip": "Vai al contenuto",
+    "language": "Lingua",
+    "menu": "Mostra o nascondi il menu"
+  },
+  "hero": {
+    "tag": "David Marsal Ivars",
+    "title": "Sviluppatore Full Stack specializzato in Ingegneria Backend",
+    "text": "Realizzo applicazioni web scalabili, API e integrazioni con PHP, Symfony e Laravel. Modernizzo sistemi legacy e pubblico librerie open source.",
+    "viewProjects": "Vedi i progetti",
+    "contact": "Contattami"
+  },
+  "projects": {
+    "title": "Progetti in evidenza",
+    "subtitle": "Prodotti e librerie che progetto, sviluppo e mantengo.",
+    "caseStudy": "Caso di studio",
+    "problem": "Il problema",
+    "solution": "La soluzione",
+    "decisions": "Decisioni tecniche",
+    "screenshot": "schermata",
+    "preRelease": "Pre-release",
+    "items": {
+      "matchly": {
+        "title": "Matchly",
+        "summary": "Strumento open source per cercare lavoro da remoto: raccoglie annunci da 13 fonti pubbliche, valuta quanto ciascuno si adatta al tuo profilo, gestisce le candidature e prepara i colloqui.",
+        "problem": "Cercare lavoro da remoto significa controllare molti portali, filtrare i duplicati e adattare ogni candidatura a mano, senza sapere con chiarezza quanto si è adatti a ciascuna posizione.",
+        "solution": "Matchly raccoglie e ripulisce gli annunci, valuta la corrispondenza tra ogni offerta e il tuo profilo, ti aiuta a preparare una candidatura che tu revisioni e approvi (non invia nulla al posto tuo), tiene traccia di ogni candidatura e prepara i colloqui.",
+        "decisions": [
+          "Backend con Laravel 13 e PHP 8.4 e interfaccia con Inertia e Vue 3 (TypeScript), disponibile in spagnolo, inglese e portoghese.",
+          "PostgreSQL per i dati, Redis e Horizon per i lavori in background e Reverb per gli aggiornamenti in tempo reale.",
+          "Controlli di qualità: test con Pest e Vitest, analisi statica con Larastan, CI e un test di architettura che mantiene il nome del prodotto definito in un solo punto.",
+          "Container con Docker per un'installazione riproducibile."
+        ],
+        "shots": [
+          "Elenco delle offerte con il punteggio di compatibilità",
+          "Bacheca di monitoraggio delle candidature",
+          "Panoramica per migliorare la ricerca"
+        ]
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "summary": "Negozio online diviso in un'API REST e in un frontend indipendente e multilingue.",
+        "problem": "Un negozio ha bisogno di catalogo, carrello, checkout e account che funzionino sia per gli ospiti sia per i clienti, in più lingue, senza accoppiare il frontend al backend.",
+        "solution": "Un'API REST in Laravel (autenticazione con token, carrello ospite, coupon, ordini e permessi per ruolo) usata da un frontend separato in Next.js, in sei lingue e con tema chiaro e scuro.",
+        "decisions": [
+          "Token Bearer (Sanctum) al posto dei cookie, così il frontend resta disaccoppiato. Il carrello ospite viaggia nell'header X-Cart-Token e sopravvive al login.",
+          "Next.js App Router con TypeScript strict e struttura per funzionalità. Le funzionalità si importano a vicenda solo tramite il loro indice pubblico.",
+          "Ogni risposta dell'API viene validata con Zod prima di arrivare a un componente, e il client API è una porta che i test sostituiscono con un fetch finto.",
+          "Sei lingue, con email tradotte dall'API in base all'header Accept-Language, e un tema applicato prima del primo rendering per evitare sfarfallii."
+        ],
+        "shots": [
+          "Home del negozio",
+          "Pagina del prodotto",
+          "Carrello"
+        ]
+      },
+      "zipwarden": {
+        "title": "ZipWarden",
+        "summary": "Lettura ed estrazione sicura di ZIP che protegge da zip slip e zip bomb, con implementazioni equivalenti in PHP e JavaScript.",
+        "problem": "Estrarre archivi caricati dagli utenti può scrivere file fuori dalla cartella di destinazione o esaurire disco, memoria e CPU.",
+        "solution": "Una libreria che apre archivi non attendibili con limiti rigorosi ed estrae in una cartella temporanea privata. Il risultato viene spostato a destinazione solo se tutte le voci hanno superato i controlli, e qualsiasi errore cancella quanto scritto.",
+        "decisions": [
+          "Rifiuta lo zip slip: segmenti ../, percorsi assoluti, collegamenti simbolici e byte NUL nei nomi.",
+          "Rifiuta le zip bomb con limiti su dimensione compressa e decompressa, numero di voci, rapporto di compressione, profondità delle cartelle, archivi annidati e tempo.",
+          "Una specifica condivisa con due implementazioni indipendenti, PHP e JavaScript, che la rispettano.",
+          "Nucleo indipendente dal framework con adattatori opzionali per Laravel e Symfony in namespace separati, testato con archivi malevoli costruiti apposta."
+        ],
+        "shots": []
+      },
+      "whistleblower": {
+        "title": "Whistleblower",
+        "summary": "Canale interno di segnalazione per Laravel e Symfony basato sulla Ley 2/2023 spagnola.",
+        "problem": "Le aziende devono offrire un canale interno con anonimato, scadenze legali, tracciabilità e conservazione dei dati, e queste regole sono noiose da implementare bene.",
+        "solution": "Un pacchetto con segnalazioni anonime (un codice di tracciamento monouso di cui si salva solo l'hash), messaggistica anonima nei due sensi, avvisi sulle scadenze, registro di audit e conservazione automatica dei dati, esposto come API JSON.",
+        "decisions": [
+          "Le regole di business vivono in un nucleo indipendente dal framework. Laravel (Eloquent) e Symfony (Doctrine DBAL) sono adattatori sottili che eseguono lo stesso comportamento.",
+          "Cifratura a riposo di oggetto, descrizione, dati di contatto, risoluzione e messaggi.",
+          "Scadenze legali con avvisi programmati e una conservazione che rende anonime le segnalazioni inattive ed elimina le voci del registro dopo dieci anni.",
+          "Registro di audit dei cambi di stato e di ogni apertura di una segnalazione da parte di un gestore, senza salvare il contenuto. PHPStan livello 8 e CI."
+        ],
+        "shots": []
+      }
+    },
+    "close": "Chiudi"
+  },
+  "experience": {
+    "title": "Esperienza professionale",
+    "present": "Presente",
+    "items": {
+      "meganet": {
+        "role": "Sviluppatore Web",
+        "text": "Nuove funzionalità e manutenzione di applicazioni web con Laravel sul backend e Vue.js sul frontend."
+      },
+      "motorflash": {
+        "role": "Sviluppatore Backend",
+        "text": "Sviluppo di API REST per l'integrazione con sistemi esterni e migrazione di progetti legacy verso piattaforme moderne, migliorando prestazioni e sicurezza."
+      },
+      "cyberline": {
+        "role": "Sviluppatore Web",
+        "text": "API REST e SOAP per collegare sistemi esterni alla piattaforma, migrazioni di codice legacy e single sign-on (SSO)."
+      },
+      "flexvision": {
+        "role": "Sviluppatore Full Stack",
+        "text": "Ottimizzazione delle prestazioni SQL, integrazione di API esterne, correzione di bug critici e falle di sicurezza e modernizzazione di sistemi legacy con principi SOLID e progettazione orientata agli oggetti."
+      },
+      "lapida": {
+        "role": "Sviluppatore Full Stack",
+        "text": "Manutenzione del database e ottimizzazione delle query, correzione di bug critici, componenti asincroni e CSS modulare con Sass e Less."
+      },
+      "cdai": {
+        "role": "Project Manager",
+        "text": "Stima di risorse e tempi, piani di progetto e di processo, gestione di rischi e cambiamenti e guida del team."
+      },
+      "freelance": {
+        "role": "Sviluppatore Full Stack Freelance",
+        "place": "Clienti in Cile, Danimarca, Stati Uniti e Spagna",
+        "text": "Correzione di errori, completamento di prodotti rimasti incompiuti e migrazione di sistemi legacy, lavorando da remoto."
+      }
+    }
+  },
+  "skills": {
+    "title": "Competenze tecniche",
+    "subtitle": "Le tecnologie e le pratiche con cui lavoro.",
+    "groups": {
+      "backend": "Ingegneria backend",
+      "frontend": "Sviluppo frontend",
+      "databases": "Database",
+      "architecture": "Architettura software",
+      "devops": "DevOps e strumenti",
+      "testing": "Test e qualità"
+    },
+    "architecture": [
+      "Domain-driven design (DDD)",
+      "Architettura esagonale",
+      "CQRS",
+      "SOLID",
+      "Progettazione di API REST"
+    ]
+  },
+  "about": {
+    "title": "Chi sono",
+    "text": "Sviluppatore web con oltre 7 anni di esperienza, specializzato in PHP con profilo full stack. Mi concentro sul migliorare le prestazioni dei prodotti esistenti, modernizzare i sistemi legacy e sviluppare nuovi progetti da zero.",
+    "education": "Formazione",
+    "certifications": "Certificazioni",
+    "languages": "Lingue",
+    "degrees": {
+      "engineering": "Ingegneria Informatica",
+      "crypto": "Post-laurea in Crittografia"
+    },
+    "certs": [
+      "Laravel, MySQL e SQL, Git (TestDome, apr 2022)",
+      "PHP (TestDome, gen 2023)",
+      "EF SET inglese (apr 2022)",
+      "Scrum Foundation SFPC (CertiProf, gen 2023)"
+    ],
+    "spoken": [
+      "Spagnolo: madrelingua",
+      "Inglese: avanzato"
+    ]
+  },
+  "contact": {
+    "title": "Contatti",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "email": "Indirizzo email",
+    "phone": "Telefono (facoltativo)",
+    "message": "Messaggio",
+    "send": "Invia",
+    "sending": "Invio in corso...",
+    "success": "Messaggio inviato correttamente.",
+    "error": "Qualcosa è andato storto, riprova più tardi.",
+    "orEmail": "Preferisci l'email? Scrivi a",
+    "privacy": "I tuoi dati vengono usati solo per rispondere al tuo messaggio."
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati.",
+    "cv": "Scarica il CV",
+    "links": "Link"
+  }
+}

@@ -829,13 +829,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   color: #fff;
   text-decoration: underline;
 }
-.footer-links {
+.footer-meta {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 12px 16px;
-  margin: 24px 0;
+  gap: 8px 16px;
 }
+.footer-meta p { margin: 0; }
 .social-icon a svg {
   width: 40%;
   height: auto;
@@ -844,9 +845,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   transition: 0.3s ease-in-out;
 }
 .social-icon a:hover svg { color: #000; }
-.footer-links .social-icon { margin-left: 0; }
+.footer-meta .social-icon { margin-left: 0; }
 @media (min-width: 576px) {
-  .footer-links { justify-content: flex-end; margin-top: 0; }
+  .footer-meta { justify-content: flex-end; }
 }
 @media (prefers-reduced-motion: reduce) {
   .banner img, html { animation: none; scroll-behavior: auto; }

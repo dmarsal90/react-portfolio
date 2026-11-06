@@ -1,7 +1,10 @@
 import meter1 from "../img/meter1.svg";
 import meter2 from "../img/meter2.svg";
 import meter3 from "../img/meter3.svg";
-import Carousel from 'react-multi-carousel';
+import CarouselModule from 'react-multi-carousel';
+
+// shortcut: Vite 8 returns the CJS exports object here; drop when react-multi-carousel ships ESM or is replaced.
+const Carousel = CarouselModule.default ?? CarouselModule;
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../img/color-sharp.png"
 

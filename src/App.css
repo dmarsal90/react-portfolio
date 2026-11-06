@@ -309,7 +309,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Skills Css ************/
 .skill {
-  padding: 0 0 50px 0;
+  padding: 50px 0;
   position: relative;
 }
 .skill-bx {
@@ -540,7 +540,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Footer Css ************/
 .footer {
-  padding: 0 0 50px 0;
+  padding: 50px 0;
   background-image: url('./assets/img/footer-bg.webp');
   background-position: center center;
   background-size: cover;
@@ -849,6 +849,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   transition: transform 0.2s ease-in-out;
 }
 .footer-links a:hover, .footer-links a:focus-visible { transform: translateY(-3px); }
+.footer-links svg { stroke: currentColor; stroke-width: 0.6px; }
 @media (min-width: 576px) {
   .footer-links { justify-content: flex-end; margin-top: 0; }
 }

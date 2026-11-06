@@ -33,7 +33,7 @@ export const NavBar = () => {
         <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
           <Container>
             <Navbar.Brand href="/">
-              <img src={logo} alt="Logo" />
+              <img src={logo} alt="David Marsal" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav">
               <span className="navbar-toggler-icon"></span>
@@ -84,11 +84,12 @@ export const NavBar = () => {
                 <a
                     href="https://www.linkedin.com/in/davidmarsalivars/"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
-                  <img src={navIcon1} alt="linkedIn" />
+                  <img src={navIcon1} alt="LinkedIn" />
                 </a>
-                <a href="https://github.com/dmarsal90" target="_blank">
-                  <img src={navIcon2} alt="github" />
+                <a href="https://github.com/dmarsal90" target="_blank" rel="noopener noreferrer">
+                  <img src={navIcon2} alt="GitHub" />
                 </a>
               </div>
               <HashLink to="#connect">

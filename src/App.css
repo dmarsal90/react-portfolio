@@ -94,6 +94,12 @@ nav.navbar.scrolled {
 }
 nav.navbar a.navbar-brand {
     width: 9%;
+    min-width: 120px;
+}
+@media (max-width: 767px) {
+  nav.navbar a.navbar-brand {
+    width: 160px;
+  }
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
@@ -616,4 +622,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding-left: 20px;
   color: #B8B8B8;
   font-size: 16px;
+}
+
+@media (max-width: 767px) {
+  .banner h1 {
+    font-size: 40px;
+  }
 }

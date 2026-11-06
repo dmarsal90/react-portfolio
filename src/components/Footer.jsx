@@ -11,19 +11,21 @@ export const Footer = () => {
     <footer className="footer">
       <Container>
         <Row className="align-items-center">
-          <Col xs={12} sm={6}>
+          <Col xs={12} sm={5}>
             <img src={logo} alt="David Marsal" />
           </Col>
-          <Col xs={12} sm={6} className="text-center text-sm-end">
-            <nav aria-label={t.footer.links} className="footer-links">
-              <div className="social-icon">
-                <a href="https://github.com/dmarsal90" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><img src={navIcon2} alt="" /></a>
-                <a href="https://www.linkedin.com/in/davidmarsalivars/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><img src={navIcon1} alt="" /></a>
-                <a href="mailto:davidmarsalivars@gmail.com" aria-label="Email" title="Email"><Envelope aria-hidden="true" /></a>
-                <a href={`/David_Marsal_Ivars_CV_${locale.toUpperCase()}.pdf`} download aria-label={t.footer.cv} title={t.footer.cv}><FileEarmarkArrowDown aria-hidden="true" /></a>
-              </div>
-            </nav>
-            <p>© {new Date().getFullYear()}. {t.footer.rights}</p>
+          <Col xs={12} sm={7} className="text-center text-sm-end">
+            <div className="footer-meta">
+              <p>© {new Date().getFullYear()}. {t.footer.rights}</p>
+              <nav aria-label={t.footer.links} className="footer-links">
+                <div className="social-icon">
+                  <a href="https://github.com/dmarsal90" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><img src={navIcon2} alt="" /></a>
+                  <a href="https://www.linkedin.com/in/davidmarsalivars/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><img src={navIcon1} alt="" /></a>
+                  <a href="mailto:davidmarsalivars@gmail.com" aria-label="Email" title="Email"><Envelope aria-hidden="true" /></a>
+                  <a href={`/David_Marsal_Ivars_CV_${locale.toUpperCase()}.pdf`} download aria-label={t.footer.cv} title={t.footer.cv}><FileEarmarkArrowDown aria-hidden="true" /></a>
+                </div>
+              </nav>
+            </div>
           </Col>
         </Row>
       </Container>

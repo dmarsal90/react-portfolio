@@ -1,65 +1,27 @@
-import meter1 from "../img/meter1.svg";
-import meter2 from "../img/meter2.svg";
-import meter3 from "../img/meter3.svg";
-import CarouselModule from 'react-multi-carousel';
+import colorSharp from "../img/color-sharp.png";
 
-// shortcut: Vite 8 returns the CJS exports object here; drop when react-multi-carousel ships ESM or is replaced.
-const Carousel = CarouselModule.default ?? CarouselModule;
-import 'react-multi-carousel/lib/styles.css';
-import colorSharp from "../img/color-sharp.png"
+const groups = [
+  { title: "Languages", items: ["PHP", "JavaScript", "Java", "SQL"] },
+  { title: "Frameworks and libraries", items: ["Laravel", "Symfony", "CakePHP", "Yii", "Vue.js", "React", "jQuery", "WordPress", "Bootstrap", "Materialize", "Material UI"] },
+  { title: "Tools and practices", items: ["Git", "MySQL", "REST API", "SOAP", "SSO", "SOLID", "Sass", "Less", "Scrum"] },
+];
 
-export const Skills = () => {
-    const responsive = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1
-        }
-    };
-
-    return (
-        <section className="skill" id="skills">
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <div className="skill-bx wow zoomIn">
-                            <h2>Skills</h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
-                            <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                                <div className="item">
-                                    <img src={meter1} alt="Image" />
-                                    <h5>Web Development</h5>
-                                </div>
-                                <div className="item">
-                                    <img src={meter2} alt="Image" />
-                                    <h5>Web Design</h5>
-                                </div>
-                                <div className="item">
-                                    <img src={meter3} alt="Image" />
-                                    <h5>Database Design</h5>
-                                </div>
-                                <div className="item">
-                                    <img src={meter1} alt="Image" />
-                                    <h5>Team Work</h5>
-                                </div>
-                            </Carousel>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img className="background-image-left" src={colorSharp} alt="Image" />
-        </section>
-    )
-}
+export const Skills = () => (
+  <section className="skill" id="skills">
+    <div className="container">
+      <div className="skill-bx">
+        <h2>Skills</h2>
+        <p>The technologies I use day to day.</p>
+        {groups.map(({ title, items }) => (
+          <div key={title} className="skill-group">
+            <h3>{title}</h3>
+            <ul className="chips justify-content-center">
+              {items.map((item) => <li key={item}>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+    <img className="background-image-left" src={colorSharp} alt="" />
+  </section>
+);

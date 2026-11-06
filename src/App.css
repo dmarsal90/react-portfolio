@@ -74,12 +74,10 @@ input:focus, textarea:focus, select:focus {
 	}
 }
 
-p.success {
-	color: green;
-}
-
+p.success,
 p.danger {
-	color: red;
+	color: #fff;
+	font-weight: 700;
 }
 /************ Navbar Css ************/
 nav.navbar {

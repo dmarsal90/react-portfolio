@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "David Marsal Ivars | Full Stack Developer (Backend Engineering)",
+    "description": "Full stack developer specializing in backend engineering. Scalable web applications, REST APIs and integrations with PHP, Symfony and Laravel."
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "skills": "Skills",
+    "about": "About",
+    "connect": "Let’s Connect",
+    "skip": "Skip to content",
+    "language": "Language",
+    "menu": "Toggle navigation"
+  },
+  "hero": {
+    "tag": "David Marsal Ivars",
+    "title": "Full Stack Developer specializing in Backend Engineering",
+    "text": "I build scalable web applications, APIs and integrations with PHP, Symfony and Laravel. I modernize legacy systems and publish open-source libraries.",
+    "viewProjects": "View projects",
+    "contact": "Contact me"
+  },
+  "projects": {
+    "title": "Selected projects",
+    "subtitle": "Products and libraries I design, build and maintain.",
+    "caseStudy": "Case study",
+    "problem": "The problem",
+    "solution": "The solution",
+    "decisions": "Technical decisions",
+    "screenshot": "screenshot",
+    "preRelease": "Pre-release",
+    "items": {
+      "matchly": {
+        "title": "Matchly",
+        "summary": "Open-source remote job search tool: gathers listings from 13 public sources, scores how well each fits your profile, tracks applications and prepares interviews.",
+        "problem": "Looking for remote work means checking many job boards, filtering duplicates and tailoring every application by hand, with no clear idea of how well a role fits you.",
+        "solution": "Matchly collects and cleans listings, scores the match between each offer and your profile, helps you draft an application that you review and approve (nothing is sent for you), tracks every application and prepares interviews.",
+        "decisions": [
+          "Laravel 13 and PHP 8.4 backend with an Inertia and Vue 3 (TypeScript) interface, available in Spanish, English and Portuguese.",
+          "PostgreSQL for storage, Redis and Horizon for background work, and Reverb for real-time updates.",
+          "Quality gates: Pest and Vitest tests, Larastan static analysis, CI, and an architecture test that keeps the product name defined in a single place.",
+          "Containerised with Docker for a reproducible setup."
+        ],
+        "shots": [
+          "Job listings with the match score",
+          "Application tracking board",
+          "Insights to improve your search"
+        ]
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "summary": "Online store split into a REST API and an independent multilingual storefront.",
+        "problem": "A store needs a catalogue, cart, checkout and accounts that work for guests and customers alike, in several languages, without coupling the frontend to the backend.",
+        "solution": "A Laravel REST API (token authentication, guest cart, coupons, orders and role permissions) consumed by a separate Next.js storefront in six languages with light and dark themes.",
+        "decisions": [
+          "Bearer tokens (Sanctum) instead of cookies, so the storefront stays decoupled. Guest carts travel in an X-Cart-Token header and survive login.",
+          "Next.js App Router with strict TypeScript and a feature-based layout. Features only import each other through their public index.",
+          "Every API response is parsed with Zod before it reaches a component, and the API client is a port that tests replace with a fake fetch.",
+          "Six languages, with emails translated by the API from the Accept-Language header, and a theme set before first paint to avoid flashes."
+        ],
+        "shots": [
+          "Storefront home",
+          "Product page",
+          "Shopping cart"
+        ]
+      },
+      "zipwarden": {
+        "title": "ZipWarden",
+        "summary": "Safe ZIP reading and extraction that protects against zip slip and zip bombs, with equivalent PHP and JavaScript implementations.",
+        "problem": "Extracting user-uploaded archives can write files outside the target directory or exhaust disk, memory and CPU.",
+        "solution": "A library that opens untrusted archives under strict limits and extracts into a private staging directory. The result is moved to the destination only if every entry passed, and any failure deletes what was written.",
+        "decisions": [
+          "Rejects zip slip: ../ segments, absolute paths, symbolic links and NUL bytes in names.",
+          "Rejects zip bombs with limits on compressed and uncompressed size, entry count, compression ratio, directory depth, nested archives and elapsed time.",
+          "One shared specification with two independent implementations, PHP and JavaScript, that follow it.",
+          "Framework-agnostic core with optional Laravel and Symfony adapters in separate namespaces, tested with maliciously built archives."
+        ],
+        "shots": []
+      },
+      "whistleblower": {
+        "title": "Whistleblower",
+        "summary": "Internal whistleblowing channel for Laravel and Symfony based on Spain’s Ley 2/2023.",
+        "problem": "Companies must offer an internal channel with anonymity, legal deadlines, traceability and data retention, and those rules are tedious to get right.",
+        "solution": "A package with anonymous reports (a one-time tracking code of which only the hash is stored), two-way anonymous messaging, deadline alerts, an audit trail and automatic data retention, exposed as a JSON API.",
+        "decisions": [
+          "Business rules live in a framework-free core. Laravel (Eloquent) and Symfony (Doctrine DBAL) are thin adapters that run the same behaviour.",
+          "Encryption at rest for subject, description, contact data, resolution and messages.",
+          "Legal deadlines with scheduled alerts, and retention that anonymises inactive reports and deletes registry entries after ten years.",
+          "Audit trail of state changes and of every time a manager opens a report, without storing content. PHPStan level 8 and CI."
+        ],
+        "shots": []
+      }
+    }
+  },
+  "experience": {
+    "title": "Professional experience",
+    "present": "Present",
+    "items": {
+      "meganet": {
+        "role": "Web Developer",
+        "text": "New features and maintenance of web applications with Laravel on the backend and Vue.js on the frontend."
+      },
+      "motorflash": {
+        "role": "Backend Developer",
+        "text": "Built REST APIs for integrations with external systems and moved legacy projects to modern platforms, improving performance and security."
+      },
+      "cyberline": {
+        "role": "Web Developer",
+        "text": "REST and SOAP APIs to connect external systems to the platform, legacy migrations and single sign-on (SSO)."
+      },
+      "flexvision": {
+        "role": "Full Stack Developer",
+        "text": "SQL performance work, external API integrations, fixing critical bugs and security flaws, and modernizing legacy systems with SOLID principles and object-oriented design."
+      },
+      "lapida": {
+        "role": "Full Stack Developer",
+        "text": "Database upkeep and query tuning, critical bug fixes, asynchronous components and modular CSS with Sass and Less."
+      },
+      "cdai": {
+        "role": "Project Manager",
+        "text": "Estimated resources and schedules, ran project and process plans, managed risks and changes, and led the team."
+      },
+      "freelance": {
+        "role": "Freelance Full Stack Developer",
+        "place": "Clients in Chile, Denmark, the United States and Spain",
+        "text": "Fixed bugs, finished unfinished products and migrated legacy systems, working remotely."
+      }
+    }
+  },
+  "skills": {
+    "title": "Technical expertise",
+    "subtitle": "The technologies and practices I work with.",
+    "groups": {
+      "backend": "Backend engineering",
+      "frontend": "Frontend development",
+      "databases": "Databases",
+      "architecture": "Software architecture",
+      "devops": "DevOps and tooling",
+      "testing": "Testing and quality"
+    },
+    "architecture": [
+      "Domain-driven design (DDD)",
+      "Hexagonal architecture",
+      "CQRS",
+      "SOLID",
+      "REST API design"
+    ]
+  },
+  "about": {
+    "title": "About me",
+    "text": "Web developer with over 7 years of experience, specialized in PHP with a full stack profile. I focus on improving the performance of existing products, modernizing legacy systems and building new projects from scratch.",
+    "education": "Education",
+    "certifications": "Certifications",
+    "languages": "Languages",
+    "degrees": {
+      "engineering": "Computer Engineering",
+      "crypto": "Postgraduate in Cryptography"
+    },
+    "certs": [
+      "Laravel, MySQL and SQL, Git (TestDome, Apr 2022)",
+      "PHP (TestDome, Jan 2023)",
+      "EF SET English (Apr 2022)",
+      "Scrum Foundation SFPC (CertiProf, Jan 2023)"
+    ],
+    "spoken": [
+      "Spanish: native",
+      "English: advanced"
+    ]
+  },
+  "contact": {
+    "title": "Get in touch",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email address",
+    "phone": "Phone (optional)",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Message sent successfully.",
+    "error": "Something went wrong, please try again later.",
+    "orEmail": "Prefer email? Write to",
+    "privacy": "Your details are only used to reply to your message."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "cv": "Download CV (English)",
+    "links": "Links"
+  }
+}

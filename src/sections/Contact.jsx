@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import contactImg from "../img/contact-img.svg";
-import TrackVisibility from './TrackVisibility';
+import contactImg from "../assets/img/contact-img.svg";
+import TrackVisibility from '../components/TrackVisibility';
+import { useI18n } from "../i18n";
 
 const ENDPOINT = "https://api.web3forms.com/submit";
 const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
@@ -9,6 +10,7 @@ const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 const initialDetails = { firstName: '', lastName: '', email: '', phone: '', message: '' };
 
 export const Contact = () => {
+  const { t } = useI18n();
   const [details, setDetails] = useState(initialDetails);
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState(null);
@@ -34,10 +36,10 @@ export const Contact = () => {
       const result = await response.json();
       if (!response.ok || !result.success) throw new Error(result.message ?? `HTTP ${response.status}`);
       setDetails(initialDetails);
-      setStatus({ ok: true, message: "Message sent successfully." });
+      setStatus({ ok: true, message: t.contact.success });
     } catch (error) {
       console.error(error);
-      setStatus({ ok: false, message: "Something went wrong, please try again later." });
+      setStatus({ ok: false, message: t.contact.error });
     } finally {
       setSending(false);
     }
@@ -58,25 +60,25 @@ export const Contact = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2>Get In Touch</h2>
+                  <h2>{t.contact.title}</h2>
                   <form onSubmit={handleSubmit}>
                     <Row>
                       <Col xs={12} sm={6} className="px-1">
-                        <input type="text" name="firstName" aria-label="First name" placeholder="First Name" autoComplete="given-name" required maxLength={80} value={details.firstName} onChange={update('firstName')} />
+                        <input type="text" name="firstName" aria-label={t.contact.firstName} placeholder={t.contact.firstName} autoComplete="given-name" required maxLength={80} value={details.firstName} onChange={update('firstName')} />
                       </Col>
                       <Col xs={12} sm={6} className="px-1">
-                        <input type="text" name="lastName" aria-label="Last name" placeholder="Last Name" autoComplete="family-name" required maxLength={80} value={details.lastName} onChange={update('lastName')} />
+                        <input type="text" name="lastName" aria-label={t.contact.lastName} placeholder={t.contact.lastName} autoComplete="family-name" required maxLength={80} value={details.lastName} onChange={update('lastName')} />
                       </Col>
                       <Col xs={12} sm={6} className="px-1">
-                        <input type="email" name="email" aria-label="Email address" placeholder="Email Address" autoComplete="email" required maxLength={120} value={details.email} onChange={update('email')} />
+                        <input type="email" name="email" aria-label={t.contact.email} placeholder={t.contact.email} autoComplete="email" required maxLength={120} value={details.email} onChange={update('email')} />
                       </Col>
                       <Col xs={12} sm={6} className="px-1">
-                        <input type="tel" name="phone" aria-label="Phone number (optional)" placeholder="Phone No." autoComplete="tel" maxLength={30} value={details.phone} onChange={update('phone')} />
+                        <input type="tel" name="phone" aria-label={t.contact.phone} placeholder={t.contact.phone} autoComplete="tel" maxLength={30} value={details.phone} onChange={update('phone')} />
                       </Col>
                       <Col xs={12} className="px-1">
-                        <textarea rows="6" name="message" aria-label="Message" placeholder="Message" required maxLength={2000} value={details.message} onChange={update('message')}></textarea>
+                        <textarea rows="6" name="message" aria-label={t.contact.message} placeholder={t.contact.message} required maxLength={2000} value={details.message} onChange={update('message')}></textarea>
                         <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: "none" }} />
-                        <button type="submit" disabled={sending}><span>{sending ? "Sending..." : "Send"}</span></button>
+                        <button type="submit" disabled={sending}><span>{sending ? t.contact.sending : t.contact.send}</span></button>
                       </Col>
                       {status &&
                         <Col>
@@ -85,6 +87,10 @@ export const Contact = () => {
                       }
                     </Row>
                   </form>
+                  <p className="contact-note">
+                    {t.contact.orEmail} <a href="mailto:davidmarsalivars@gmail.com">davidmarsalivars@gmail.com</a>.<br />
+                    {t.contact.privacy}
+                  </p>
                 </div>}
             </TrackVisibility>
           </Col>

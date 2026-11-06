@@ -825,7 +825,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   margin-top: 24px;
   font-size: 15px;
 }
-.contact-note a, .footer-links a {
+.contact-note a {
   color: #fff;
   text-decoration: underline;
 }
@@ -833,9 +833,22 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 24px;
-  margin-top: 24px;
+  gap: 12px 16px;
+  margin: 24px 0;
 }
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  font-size: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+.footer-links a:hover, .footer-links a:focus-visible { transform: translateY(-3px); }
 @media (min-width: 576px) {
   .footer-links { justify-content: flex-end; margin-top: 0; }
 }

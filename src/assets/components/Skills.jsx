@@ -1,3 +1,4 @@
+import TrackVisibility from "./TrackVisibility";
 import colorSharp from "../img/color-sharp.webp";
 
 const groups = [
@@ -9,7 +10,9 @@ const groups = [
 export const Skills = () => (
   <section className="skill" id="skills">
     <div className="container">
-      <div className="skill-bx">
+      <TrackVisibility>
+        {({ isVisible }) =>
+      <div className={`skill-bx ${isVisible ? "animate__animated animate__slideInUp" : ""}`}>
         <h2>Skills</h2>
         <p>The technologies I use day to day.</p>
         {groups.map(({ title, items }) => (
@@ -20,7 +23,8 @@ export const Skills = () => (
             </ul>
           </div>
         ))}
-      </div>
+      </div>}
+      </TrackVisibility>
     </div>
     <img className="background-image-left" src={colorSharp} alt="" width="543" height="744" loading="lazy" decoding="async" />
   </section>

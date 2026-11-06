@@ -1,0 +1,38 @@
+import { useI18n } from "../i18n";
+
+export const CaseStudy = ({ project: { key, gallery = [] } }) => {
+  const { t } = useI18n();
+  const text = t.projects.items[key];
+
+  return (
+    <details className="case-study">
+      <summary>{t.projects.caseStudy}: {text.title}</summary>
+      <div className="case-study-body">
+        <div className="case-study-text">
+          <div>
+            <h4>{t.projects.problem}</h4>
+            <p>{text.problem}</p>
+            <h4>{t.projects.solution}</h4>
+            <p>{text.solution}</p>
+          </div>
+          <div>
+            <h4>{t.projects.decisions}</h4>
+            <ul>
+              {text.decisions.map((decision) => <li key={decision}>{decision}</li>)}
+            </ul>
+          </div>
+        </div>
+        {gallery.length > 0 && (
+          <div className="case-study-gallery">
+            {gallery.map((src, i) => (
+              <figure key={src}>
+                <img src={src} alt={text.shots[i]} loading="lazy" />
+                <figcaption>{text.shots[i]}</figcaption>
+              </figure>
+            ))}
+          </div>
+        )}
+      </div>
+    </details>
+  );
+};

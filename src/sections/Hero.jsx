@@ -1,0 +1,39 @@
+import { Container, Row, Col } from "react-bootstrap";
+import { ArrowRightCircle } from "react-bootstrap-icons";
+import headerImg from "../assets/img/header-img.svg";
+import TrackVisibility from "../components/TrackVisibility";
+import { useI18n } from "../i18n";
+
+export const Hero = () => {
+  const { t } = useI18n();
+  return (
+    <section className="banner" id="home">
+      <Container>
+        <Row className="align-items-center">
+          <Col xs={12} md={6} xl={7}>
+            <TrackVisibility>
+              {({ isVisible }) =>
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <span className="tagline">{t.hero.tag}</span>
+                  <h1>{t.hero.title}</h1>
+                  <p>{t.hero.text}</p>
+                  <div className="hero-actions">
+                    <a className="connect-btn" href="#projects">{t.hero.viewProjects} <ArrowRightCircle size={25} aria-hidden="true" /></a>
+                    <a className="hero-link" href="#connect">{t.hero.contact}</a>
+                  </div>
+                </div>}
+            </TrackVisibility>
+          </Col>
+          <Col xs={12} md={6} xl={5}>
+            <TrackVisibility>
+              {({ isVisible }) =>
+                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
+                  <img src={headerImg} alt="" width="682" height="614" fetchPriority="high" />
+                </div>}
+            </TrackVisibility>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
+};

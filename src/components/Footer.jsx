@@ -19,7 +19,7 @@ export const Footer = () => {
               <a href="mailto:davidmarsalivars@gmail.com" aria-label="Email" title="Email"><Envelope aria-hidden="true" /></a>
               <a href={`/David_Marsal_Ivars_CV_${locale.toUpperCase()}.pdf`} download aria-label={t.footer.cv} title={t.footer.cv}><FileEarmarkArrowDown aria-hidden="true" /></a>
             </nav>
-            <p>© {new Date().getFullYear()} David Marsal Ivars. {t.footer.rights}</p>
+            <p>© {new Date().getFullYear()}. {t.footer.rights}</p>
           </Col>
         </Row>
       </Container>

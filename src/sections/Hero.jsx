@@ -1,6 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg";
 import TrackVisibility from "../components/TrackVisibility";
 import { useI18n } from "../i18n";
 
@@ -10,7 +9,7 @@ export const Hero = () => {
     <section className="banner" id="home">
       <Container>
         <Row className="align-items-center">
-          <Col xs={12} md={6} xl={7}>
+          <Col xs={12} lg={9} xl={8}>
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
@@ -22,14 +21,6 @@ export const Hero = () => {
                     <a className="hero-link" href="#connect">{t.hero.contact}</a>
                     <a className="hero-link" href={`/David_Marsal_Ivars_CV_${locale.toUpperCase()}.pdf`} download>{t.footer.cv}</a>
                   </div>
-                </div>}
-            </TrackVisibility>
-          </Col>
-          <Col xs={12} md={6} xl={5}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="" width="682" height="614" fetchPriority="high" />
                 </div>}
             </TrackVisibility>
           </Col>

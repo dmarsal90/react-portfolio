@@ -1,6 +1,5 @@
 import { Container } from "react-bootstrap";
 import TrackVisibility from "../components/TrackVisibility";
-import colorSharp from "../assets/img/color-sharp.webp";
 import { skills } from "../data/skills";
 import { useI18n } from "../i18n";
 
@@ -25,7 +24,6 @@ export const Skills = () => {
             </div>}
         </TrackVisibility>
       </Container>
-      <img className="background-image-left" src={colorSharp} alt="" width="543" height="744" loading="lazy" decoding="async" />
     </section>
   );
 };

@@ -26,7 +26,7 @@ export const Hero = () => {
             </TrackVisibility>
           </Col>
           <Col xs={12} lg={5} className="text-center text-lg-end">
-            <img className="hero-portrait" src={portrait} alt={t.hero.photoAlt} width="800" height="875" fetchPriority="high" />
+            <img className="hero-portrait" src={portrait} alt={t.hero.photoAlt} width="800" height="667" fetchPriority="high" />
           </Col>
         </Row>
       </Container>

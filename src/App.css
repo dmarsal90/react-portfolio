@@ -254,65 +254,29 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Banner Css ************/
 .banner {
-  margin-top: 0;
-  padding: 260px 0 100px 0;
+  padding: 200px 0 100px;
 }
 .banner .tagline {
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  padding: 8px 10px;
-  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  font-size: 20px;
-  margin-bottom: 16px;
   display: inline-block;
+  margin-bottom: 20px;
+  color: #818cf8;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 .banner h1 {
-  font-size: 54px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  line-height: 1;
-  margin-bottom: 20px;
-  display: block;
+  margin-bottom: 24px;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 .banner p {
-  color: #B8B8B8;
+  max-width: 60ch;
+  color: var(--muted);
   font-size: 18px;
-  letter-spacing: 0.8px;
-  line-height: 1.5em;
-  width: 96%;
-}
-.banner .connect-btn {
-  color: #fff;
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 0.8px;
-  display: flex;
-  text-decoration: none;
-  align-items: center;
-}
-.banner .connect-btn svg {
-  font-size: 25px;
-  margin-left: 10px;
-  transition: 0.3s ease-in-out;
-  line-height: 1;
-}
-.banner .connect-btn:hover svg {
-  margin-left: 25px;
-}
-.banner img {
-  animation: updown 3s linear infinite;
-}
-@keyframes updown {
-    0% {
-        transform: translateY(-20px);
-    }
-    50% {
-        transform: translateY(20px);
-    }
-    100% {
-        transform: translateY(-20px);
-    }
+  line-height: 1.6;
 }
 
 /************ Skills Css ************/
@@ -716,16 +680,30 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px 36px;
-  margin-top: 60px;
+  gap: 12px 16px;
+  margin-top: 40px;
 }
-.banner .hero-link {
+.btn-solid, .btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
   color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+.btn-solid { background: var(--accent); border: 1px solid var(--accent); }
+.btn-solid:hover { background: #4f52d9; color: #fff; }
+.btn-ghost { background: rgb(255 255 255 / 0.06); border: 1px solid var(--glass-border); }
+.btn-ghost:hover { background: rgb(255 255 255 / 0.12); color: #fff; }
+.hero-link {
+  color: var(--muted);
+  font-size: 16px;
   text-decoration: underline;
 }
+.hero-link:hover { color: #fff; }
 
 /************ Case studies ************/
 .proj-badge {

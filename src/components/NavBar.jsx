@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/img/svg.svg";
 import navIcon1 from "../assets/img/nav-icon1.svg";
@@ -9,7 +9,9 @@ import { useI18n } from "../i18n";
 const links = ["home", "projects", "experience", "skills", "about"];
 
 export const NavBar = () => {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const navRef = useRef(null);
+  const [bar, setBar] = useState(null);
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
@@ -35,6 +37,22 @@ export const NavBar = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Slide an underline under the active link; re-measure when the language or the layout changes the link widths.
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    const measure = () => {
+      const el = nav.querySelector(".active");
+      if (!el) return setBar((b) => b && { ...b, hidden: true });
+      const pad = parseFloat(getComputedStyle(el).paddingLeft);
+      setBar({ x: el.offsetLeft + pad, w: el.offsetWidth - 2 * pad });
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(nav);
+    return () => ro.disconnect();
+  }, [activeLink, locale]);
+
   return (
     <Navbar expand="xl" collapseOnSelect className={scrolled ? "scrolled" : ""}>
       <Container>
@@ -45,7 +63,7 @@ export const NavBar = () => {
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
+          <Nav ref={navRef} className="ms-auto">
             {links.map((id) => (
               <Nav.Link
                 key={id}
@@ -56,6 +74,7 @@ export const NavBar = () => {
                 {t.nav[id]}
               </Nav.Link>
             ))}
+            {bar && <span className="nav-indicator" aria-hidden="true" style={{ transform: `translateX(${bar.x}px)`, width: bar.w, opacity: bar.hidden ? 0 : 1 }} />}
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">

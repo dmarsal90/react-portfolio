@@ -671,6 +671,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   padding: 12px 22px;
   border-radius: 10px;
   color: #fff;
+  text-decoration: none;
   font-size: 16px;
   font-weight: 500;
   transition: 0.2s ease-in-out;
@@ -685,6 +686,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   text-decoration: underline;
 }
 .hero-link:hover { color: #fff; }
+
+.hero-portrait {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: 48px auto 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+@media (min-width: 992px) {
+  .hero-portrait { margin: 0 0 0 auto; }
+}
 
 /************ Case studies ************/
 .proj-badge {

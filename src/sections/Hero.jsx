@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRight, Download } from "react-bootstrap-icons";
+import portrait from "../assets/img/portrait.webp";
 import TrackVisibility from "../components/TrackVisibility";
 import { useI18n } from "../i18n";
 
@@ -9,7 +10,7 @@ export const Hero = () => {
     <section className="banner" id="home">
       <Container>
         <Row className="align-items-center">
-          <Col xs={12} lg={9} xl={8}>
+          <Col xs={12} lg={7}>
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
@@ -23,6 +24,9 @@ export const Hero = () => {
                   </div>
                 </div>}
             </TrackVisibility>
+          </Col>
+          <Col xs={12} lg={5} className="text-center text-lg-end">
+            <img className="hero-portrait" src={portrait} alt={t.hero.photoAlt} width="800" height="875" fetchPriority="high" />
           </Col>
         </Row>
       </Container>

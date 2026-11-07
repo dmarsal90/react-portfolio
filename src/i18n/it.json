@@ -19,7 +19,8 @@
     "title": "Sviluppatore Full Stack specializzato in Ingegneria Backend",
     "text": "Realizzo applicazioni web scalabili, API e integrazioni con PHP, Symfony e Laravel. Modernizzo sistemi legacy e pubblico librerie open source.",
     "viewProjects": "Vedi i progetti",
-    "contact": "Contattami"
+    "contact": "Contattami",
+    "photoAlt": "Ritratto di David Marsal Ivars"
   },
   "projects": {
     "title": "Progetti in evidenza",

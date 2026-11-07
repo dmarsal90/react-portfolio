@@ -133,12 +133,18 @@
     "title": "Experiencia técnica",
     "subtitle": "Las tecnologías y prácticas con las que trabajo.",
     "groups": {
+      "languages": "Lenguajes",
       "backend": "Ingeniería backend",
       "frontend": "Desarrollo frontend",
+      "ui": "UI y estilos",
+      "state": "Gestión de estado",
       "databases": "Bases de datos",
-      "architecture": "Arquitectura de software",
-      "devops": "DevOps y herramientas",
-      "testing": "Testing y calidad"
+      "seo": "SEO y analítica",
+      "ai": "IA y multimedia",
+      "devops": "Cloud, DevOps y CI/CD",
+      "payments": "Pagos",
+      "testing": "Testing y calidad",
+      "architecture": "Arquitectura de software"
     },
     "architecture": [
       "Diseño guiado por el dominio (DDD)",
@@ -146,6 +152,24 @@
       "CQRS",
       "SOLID",
       "Diseño de APIs REST"
+    ],
+    "seo": [
+      "SEO técnico",
+      "Google Search Console",
+      "Google Analytics 4",
+      "Core Web Vitals",
+      "Lighthouse",
+      "Schema.org JSON-LD",
+      "Sitemaps",
+      "hreflang"
+    ],
+    "payments": [
+      "Stripe",
+      "PayPal",
+      "3D Secure",
+      "Apple Pay",
+      "Google Pay",
+      "Tarjetas"
     ]
   },
   "about": {

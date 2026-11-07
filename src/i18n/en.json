@@ -133,12 +133,18 @@
     "title": "Technical expertise",
     "subtitle": "The technologies and practices I work with.",
     "groups": {
+      "languages": "Languages",
       "backend": "Backend engineering",
       "frontend": "Frontend development",
+      "ui": "UI and styling",
+      "state": "State management",
       "databases": "Databases",
-      "architecture": "Software architecture",
-      "devops": "DevOps and tooling",
-      "testing": "Testing and quality"
+      "seo": "SEO and analytics",
+      "ai": "AI and media",
+      "devops": "Cloud, DevOps and CI/CD",
+      "payments": "Payments",
+      "testing": "Testing and quality",
+      "architecture": "Software architecture"
     },
     "architecture": [
       "Domain-driven design (DDD)",
@@ -146,6 +152,24 @@
       "CQRS",
       "SOLID",
       "REST API design"
+    ],
+    "seo": [
+      "Technical SEO",
+      "Google Search Console",
+      "Google Analytics 4",
+      "Core Web Vitals",
+      "Lighthouse",
+      "Schema.org JSON-LD",
+      "Sitemaps",
+      "hreflang"
+    ],
+    "payments": [
+      "Stripe",
+      "PayPal",
+      "3D Secure",
+      "Apple Pay",
+      "Google Pay",
+      "Cards"
     ]
   },
   "about": {

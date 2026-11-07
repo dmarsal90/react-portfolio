@@ -1,9 +1,15 @@
-// Group titles live in src/i18n/*.json under skills.groups. `architecture` items are translated, so they live there too.
+// Group titles live in src/i18n/*.json under skills.groups. Groups with `items: null` (seo, payments, architecture) have translated items in the same file.
 export const skills = [
-  { key: "backend", items: ["PHP", "Laravel", "Symfony", "CakePHP", "Yii", "REST APIs", "SOAP", "SSO", "WordPress"] },
-  { key: "frontend", items: ["JavaScript", "TypeScript", "Vue.js", "React", "Next.js", "Tailwind CSS", "Bootstrap", "Sass", "Less", "jQuery", "Material UI"] },
-  { key: "databases", items: ["MySQL", "PostgreSQL", "SQL", "Redis"] },
+  { key: "languages", items: ["PHP", "JavaScript", "TypeScript", "SQL", "Java"] },
+  { key: "backend", items: ["Laravel", "Symfony", "CakePHP", "Yii", "WordPress", "Node.js", "NestJS", "Express", "Django REST", "GraphQL", "REST APIs", "SOAP", "SSO"] },
+  { key: "frontend", items: ["React", "Next.js", "Vue.js", "Nuxt", "React Native Expo", "jQuery"] },
+  { key: "ui", items: ["Tailwind CSS", "Bootstrap", "Sass/SCSS", "Less", "CSS", "Material UI", "shadcn/ui", "Radix UI", "Chakra UI"] },
+  { key: "state", items: ["Redux Toolkit", "Vuex", "Zustand", "TanStack Query"] },
+  { key: "databases", items: ["MySQL", "PostgreSQL", "Redis", "Supabase", "MongoDB"] },
+  { key: "seo", items: null },
+  { key: "ai", items: ["LLMs", "OpenAI", "Claude", "Gemini", "OpenRouter", "MCP servers", "FFmpeg"] },
+  { key: "devops", items: ["Docker", "Git", "GitHub Actions", "GitLab CI", "SonarQube", "AWS Lambda", "AWS S3", "Vercel", "Cloudflare R2", "Railway", "Trigger.dev", "Scrum"] },
+  { key: "payments", items: null },
+  { key: "testing", items: ["Pest", "PHPUnit", "PHPStan", "ESLint", "Vitest", "Jest", "React Testing Library", "Playwright", "Cypress"] },
   { key: "architecture", items: null },
-  { key: "devops", items: ["Docker", "Git", "GitHub Actions", "Scrum"] },
-  { key: "testing", items: ["Pest", "PHPUnit", "Vitest", "PHPStan", "ESLint"] },
 ];

@@ -306,11 +306,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     line-height: 1.5em;
     margin: 14px 0 30px 0;
 }
-.skill-group h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin: 30px 0 16px;
+.skill-groups {
+  display: grid;
+  gap: 28px 40px;
+  margin-top: 8px;
+  text-align: left;
 }
+@media (min-width: 992px) {
+  .skill-groups { grid-template-columns: 1fr 1fr; }
+}
+.skill-group h3 {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.skill-group .chips { margin: 0; }
 
 /************ Projects Css ************/
 .project {

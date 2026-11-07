@@ -133,12 +133,18 @@
     "title": "Technische Kompetenzen",
     "subtitle": "Die Technologien und Praktiken, mit denen ich arbeite.",
     "groups": {
+      "languages": "Sprachen",
       "backend": "Backend-Engineering",
       "frontend": "Frontend-Entwicklung",
+      "ui": "UI und Styling",
+      "state": "State-Management",
       "databases": "Datenbanken",
-      "architecture": "Softwarearchitektur",
-      "devops": "DevOps und Werkzeuge",
-      "testing": "Testing und Qualität"
+      "seo": "SEO und Analytics",
+      "ai": "KI und Medien",
+      "devops": "Cloud, DevOps und CI/CD",
+      "payments": "Zahlungen",
+      "testing": "Testing und Qualität",
+      "architecture": "Softwarearchitektur"
     },
     "architecture": [
       "Domain-driven Design (DDD)",
@@ -146,6 +152,24 @@
       "CQRS",
       "SOLID",
       "REST-API-Design"
+    ],
+    "seo": [
+      "Technisches SEO",
+      "Google Search Console",
+      "Google Analytics 4",
+      "Core Web Vitals",
+      "Lighthouse",
+      "Schema.org JSON-LD",
+      "Sitemaps",
+      "hreflang"
+    ],
+    "payments": [
+      "Stripe",
+      "PayPal",
+      "3D Secure",
+      "Apple Pay",
+      "Google Pay",
+      "Kartenzahlung"
     ]
   },
   "about": {

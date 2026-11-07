@@ -47,8 +47,8 @@ export const Contact = () => {
   return (
     <section className="contact" id="connect">
       <Container>
-        <Row className="justify-content-center">
-          <Col xs={12} lg={9} xl={8}>
+        <Row>
+          <Col xs={12}>
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={`contact-card ${isVisible ? "animate__animated animate__fadeIn" : ""}`}>

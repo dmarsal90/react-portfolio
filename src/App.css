@@ -10,7 +10,10 @@
 }
 
 /* Glass surface shared by cards and sections (same recipe as the shop admin) */
-.glass {
+.glass,
+.skill-bx,
+.proj-card,
+.contact-card {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius);
@@ -105,8 +108,11 @@ nav.navbar {
   transition:  0.32s ease-in-out;
 }
 nav.navbar.scrolled {
-  padding: 0px 0;
-  background-color: var(--bg);
+  padding: 0;
+  background: rgb(255 255 255 / 0.06);
+  border-bottom: 1px solid var(--glass-border);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
 }
 nav.navbar a.navbar-brand {
     width: 9%;
@@ -285,14 +291,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 .skill-bx {
-  background: #151515;
-  border-radius: 64px;
   text-align: center;
-  padding: 60px 50px;
+  padding: 48px 40px;
 }
 .skill-bx h2 {
-	font-size: 45px;
-	font-weight: 700;
+	font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 .skill p {
     color: #B8B8B8;
@@ -311,11 +316,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: black;
 }
 .project h2 {
-	font-size: 45px;
-	font-weight: 700;
+	font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
   text-align: center;
 }
 .project p {
@@ -330,9 +335,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .proj-card {
   position: relative;
   aspect-ratio: 16 / 10;
-  border-radius: 30px;
   overflow: hidden;
-  background: #151515;
 }
 .proj-card > img,
 .proj-placeholder {
@@ -345,7 +348,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: linear-gradient(150deg, rgb(99 102 241 / 0.25), rgb(255 255 255 / 0.04));
 }
 .proj-placeholder span {
   font-size: 40px;
@@ -360,7 +363,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   justify-content: center;
   padding: 28px 32px;
   text-align: left;
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: rgb(10 11 16 / 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   opacity: 0;
   transform: translateY(12px);
   transition: 0.4s ease-in-out;
@@ -410,11 +415,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .chips li {
   padding: 4px 14px;
   border-radius: 20px;
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: rgb(255 255 255 / 0.08);
+  border: 1px solid var(--glass-border);
   font-size: 14px;
-}
-.proj-overlay .chips li {
-  background: rgba(255, 255, 255, 0.2);
 }
 .proj-links a {
   margin-right: 20px;
@@ -425,79 +428,42 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Projects Css ************/
 .contact {
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   padding: 60px 0;
 }
-.contact img {
-  width: 92%;
+.contact-card {
+  padding: 40px;
 }
 .contact h2 {
-	font-size: 45px;
-	font-weight: 700;
+	font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
   margin-bottom: 30px;
 }
 .contact form input, .contact form textarea {
   width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 20px;
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
   color: #fff;
-  margin: 0 0 8px 0;
-  padding: 18px 26px;
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 0.8px;
-  transition: 0.3s ease-in-out;
+  margin: 0 0 8px;
+  padding: 14px 18px;
+  font-size: 16px;
+  transition: 0.2s ease-in-out;
 }
 .contact form input:focus, .contact form textarea:focus {
-  background: rgba(255, 255, 255, 1);
-  color: #121212;
+  border-color: var(--accent);
+  background: rgb(255 255 255 / 0.1);
 }
 .contact form input::placeholder, .contact form textarea::placeholder {
-  font-size: 16px;
-  font-weight: 400;
-  color: #fff;
+  color: var(--muted);
 }
-.contact form input:focus::placeholder, .contact form textarea:focus::placeholder {
-  color: #121212;
-  opacity: 0.8;
-}
-.contact form button {
-  font-weight: 700;
-  color: #000;
-  background-color: #fff;
-  padding: 14px 48px;
-  font-size: 18px;
-  margin-top: 25px;
-  border-radius: 0;
-  position: relative;
-  transition: 0.3s ease-in-out;
-}
-.contact form button span {
-  z-index: 1;
-  position: relative;
-}
-.contact form button:hover {
-  color: #fff;
-}
-.contact form button::before {
-  content: "";
-  background: #121212;
-  width: 0;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: 0.3s ease-in-out;
-}
-.contact form button:hover::before {
-  width: 100%;
-}
+.contact form button { margin-top: 16px; }
+.contact form button:disabled { opacity: 0.6; }
 
 /************ Footer Css ************/
 .footer {
-  padding: 50px 0;
+  padding: 40px 0;
+  border-top: 1px solid var(--glass-border);
 }
 .footer img {
   width: 26%;
@@ -535,7 +501,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   list-style: none;
   margin: 0;
   padding: 0 0 0 24px;
-  border-left: 2px solid #AA367C;
+  border-left: 2px solid var(--glass-border);
 }
 .timeline-item {
   position: relative;
@@ -549,7 +515,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: var(--accent);
 }
 .timeline-item time {
   font-size: 14px;
@@ -655,9 +621,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   margin-top: 8px;
   padding: 4px;
   list-style: none;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 14px;
-  background: #151515;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  background: rgb(10 11 16 / 0.92);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
 }
 .lang-menu button {
   display: flex;
@@ -672,7 +640,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   text-transform: uppercase;
 }
 .lang-menu button[aria-current] {
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: var(--accent);
 }
 
 /************ Hero extras ************/
@@ -713,8 +681,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   z-index: 2;
   padding: 4px 14px;
   border-radius: 20px;
-  background: rgba(18, 18, 18, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgb(10 11 16 / 0.85);
+  border: 1px solid var(--glass-border);
   font-size: 13px;
 }
 .proj-grid {
@@ -734,11 +702,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   text-decoration: underline;
 }
 .modal-content.case-modal {
-  --bs-modal-bg: #151515;
+  --bs-modal-bg: transparent;
   --bs-modal-color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 24px;
-  background: #151515;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  background: rgb(14 15 22 / 0.92);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
   color: #fff;
   text-align: left;
 }
@@ -825,8 +795,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   nav.navbar .navbar-collapse {
     margin-top: 8px;
     padding: 12px 20px 20px;
-    border-radius: 20px;
-    background: var(--bg);
+    border-radius: var(--radius);
+    background: rgb(10 11 16 / 0.9);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
   }
   nav.navbar .navbar-nav .nav-link.navbar-link {
     padding: 10px 0;

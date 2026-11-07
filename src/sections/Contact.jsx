@@ -83,7 +83,7 @@ export const Contact = () => {
           </Col>
         </Row>
       </Container>
-      <ToastContainer position="bottom-end" className="position-fixed p-3">
+      <ToastContainer position="top-center" className="position-fixed p-3 contact-toast-wrap">
         <Toast show={!!status} onClose={() => setStatus(null)} delay={6000} autohide className={`contact-toast ${status?.ok ? "is-ok" : "is-error"}`}>
           <Toast.Body className="d-flex align-items-start gap-3">
             <span className="flex-grow-1">{status?.message}</span>

@@ -860,6 +860,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 }
 
 /************ Contact toast ************/
+/* Sits just under the fixed header (about 100px tall on desktop, 40px on mobile once scrolled) */
+.toast-container.contact-toast-wrap {
+  top: 100px !important;
+  z-index: 1020;
+}
+@media (max-width: 1199px) {
+  .toast-container.contact-toast-wrap { top: 40px !important; }
+}
 .toast.contact-toast {
   --bs-toast-bg: transparent;
   --bs-toast-border-color: var(--glass-border);

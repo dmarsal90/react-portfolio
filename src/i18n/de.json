@@ -206,7 +206,8 @@
     "success": "Nachricht erfolgreich gesendet.",
     "error": "Etwas ist schiefgelaufen, bitte versuche es später erneut.",
     "orEmail": "Lieber per E-Mail? Schreib an",
-    "privacy": "Deine Angaben werden nur verwendet, um auf deine Nachricht zu antworten."
+    "privacy": "Deine Angaben werden nur verwendet, um auf deine Nachricht zu antworten.",
+    "close": "Schließen"
   },
   "footer": {
     "rights": "Alle Rechte vorbehalten.",

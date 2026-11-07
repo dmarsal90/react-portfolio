@@ -6,7 +6,7 @@ import navIcon2 from "../assets/img/iconmonstr-github-1.svg";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useI18n } from "../i18n";
 
-const links = ["home", "projects", "experience", "skills", "about"];
+const links = ["home", "experience", "skills", "about", "projects"];
 
 export const NavBar = () => {
   const { t, locale } = useI18n();

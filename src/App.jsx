@@ -18,10 +18,10 @@ const Page = () => {
             <NavBar/>
             <main id="main" tabIndex={-1}>
                 <Hero/>
-                <Projects/>
                 <Experience/>
                 <Skills/>
                 <About/>
+                <Projects/>
                 <Contact/>
             </main>
             <Footer/>

@@ -206,7 +206,8 @@
     "success": "Mensagem enviada com sucesso.",
     "error": "Algo correu mal, tente novamente mais tarde.",
     "orEmail": "Prefere o e-mail? Escreva para",
-    "privacy": "Os seus dados só são usados para responder à sua mensagem."
+    "privacy": "Os seus dados só são usados para responder à sua mensagem.",
+    "close": "Fechar"
   },
   "footer": {
     "rights": "Todos os direitos reservados.",

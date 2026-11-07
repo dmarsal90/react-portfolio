@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Toast, ToastContainer } from "react-bootstrap";
 import TrackVisibility from '../components/TrackVisibility';
 import { useI18n } from "../i18n";
 
@@ -72,11 +72,6 @@ export const Contact = () => {
                         <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: "none" }} />
                         <button type="submit" className="btn-solid" disabled={sending}><span>{sending ? t.contact.sending : t.contact.send}</span></button>
                       </Col>
-                      {status &&
-                        <Col>
-                          <p role={status.ok ? "status" : "alert"} className={status.ok ? "success" : "danger"}>{status.message}</p>
-                        </Col>
-                      }
                     </Row>
                   </form>
                   <p className="contact-note">
@@ -88,6 +83,14 @@ export const Contact = () => {
           </Col>
         </Row>
       </Container>
+      <ToastContainer position="bottom-end" className="position-fixed p-3">
+        <Toast show={!!status} onClose={() => setStatus(null)} delay={6000} autohide className={`contact-toast ${status?.ok ? "is-ok" : "is-error"}`}>
+          <Toast.Body className="d-flex align-items-start gap-3">
+            <span className="flex-grow-1">{status?.message}</span>
+            <button type="button" className="btn-close btn-close-white" aria-label={t.contact.close} onClick={() => setStatus(null)} />
+          </Toast.Body>
+        </Toast>
+      </ToastContainer>
     </section>
   );
 };

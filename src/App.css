@@ -92,11 +92,6 @@ input:focus, textarea:focus, select:focus {
 	}
 }
 
-p.success,
-p.danger {
-	color: #fff;
-	font-weight: 700;
-}
 /************ Navbar Css ************/
 nav.navbar {
   padding: 18px 0;
@@ -863,3 +858,15 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
     white-space: nowrap;
   }
 }
+
+/************ Contact toast ************/
+.toast.contact-toast {
+  --bs-toast-bg: transparent;
+  --bs-toast-border-color: var(--glass-border);
+  --bs-toast-color: #fff;
+  background: rgb(14 15 22 / 0.92);
+  backdrop-filter: blur(22px) saturate(150%);
+  border-radius: var(--radius);
+  border-left: 4px solid #34d399;
+}
+.toast.contact-toast.is-error { border-left-color: #f87171; }

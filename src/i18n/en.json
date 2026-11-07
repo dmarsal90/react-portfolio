@@ -206,7 +206,8 @@
     "success": "Message sent successfully.",
     "error": "Something went wrong, please try again later.",
     "orEmail": "Prefer email? Write to",
-    "privacy": "Your details are only used to reply to your message."
+    "privacy": "Your details are only used to reply to your message.",
+    "close": "Close"
   },
   "footer": {
     "rights": "All rights reserved.",

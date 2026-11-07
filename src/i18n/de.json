@@ -30,6 +30,8 @@
     "solution": "Die Lösung",
     "decisions": "Technische Entscheidungen",
     "screenshot": "Screenshot",
+    "more": "Mehr anzeigen",
+    "less": "Weniger anzeigen",
     "preRelease": "Vorabversion",
     "items": {
       "matchly": {

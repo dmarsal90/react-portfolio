@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import contactImg from "../assets/img/contact-img.svg";
 import TrackVisibility from '../components/TrackVisibility';
 import { useI18n } from "../i18n";
 
@@ -48,18 +47,11 @@ export const Contact = () => {
   return (
     <section className="contact" id="connect">
       <Container>
-        <Row className="align-items-center">
-          <Col xs={12} md={6}>
+        <Row className="justify-content-center">
+          <Col xs={12} lg={9} xl={8}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <img className={isVisible ? "animate__animated animate__zoomIn" : ""} src={contactImg} alt="" />
-              }
-            </TrackVisibility>
-          </Col>
-          <Col xs={12} md={6}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                <div className={`contact-card ${isVisible ? "animate__animated animate__fadeIn" : ""}`}>
                   <h2>{t.contact.title}</h2>
                   <form onSubmit={handleSubmit}>
                     <Row>
@@ -78,7 +70,7 @@ export const Contact = () => {
                       <Col xs={12} className="px-1">
                         <textarea rows="6" name="message" aria-label={t.contact.message} placeholder={t.contact.message} required maxLength={2000} value={details.message} onChange={update('message')}></textarea>
                         <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: "none" }} />
-                        <button type="submit" disabled={sending}><span>{sending ? t.contact.sending : t.contact.send}</span></button>
+                        <button type="submit" className="btn-solid" disabled={sending}><span>{sending ? t.contact.sending : t.contact.send}</span></button>
                       </Col>
                       {status &&
                         <Col>

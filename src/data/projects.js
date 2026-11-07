@@ -1,10 +1,10 @@
-import matchlyImg from "../assets/img/proj-matchly.jpg";
-import matchlyJobs from "../assets/img/proj-matchly-jobs.jpg";
-import matchlyApplications from "../assets/img/proj-matchly-applications.jpg";
-import matchlyInsights from "../assets/img/proj-matchly-insights.jpg";
-import ecommerceImg from "../assets/img/proj-ecommerce.jpg";
-import ecommerceProduct from "../assets/img/proj-ecommerce-product.jpg";
-import ecommerceCart from "../assets/img/proj-ecommerce-cart.jpg";
+import matchlyImg from "../assets/img/proj-matchly.webp";
+import matchlyJobs from "../assets/img/proj-matchly-jobs.webp";
+import matchlyApplications from "../assets/img/proj-matchly-applications.webp";
+import matchlyInsights from "../assets/img/proj-matchly-insights.webp";
+import ecommerceImg from "../assets/img/proj-ecommerce.webp";
+import ecommerceProduct from "../assets/img/proj-ecommerce-product.webp";
+import ecommerceCart from "../assets/img/proj-ecommerce-cart.webp";
 
 const gh = (repo) => `https://github.com/dmarsal90/${repo}`;
 

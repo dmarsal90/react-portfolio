@@ -11,7 +11,7 @@ export const ProjectCard = ({ project }) => {
   return (
     <article className="proj-card">
       {image
-        ? <img src={image} alt={`${text.title} ${t.projects.screenshot}`} loading="lazy" />
+        ? <img src={image} alt={`${text.title} ${t.projects.screenshot}`} width="1088" height="680" loading="lazy" />
         : <div className="proj-placeholder" aria-hidden="true"><span>{text.title}</span></div>}
       {preRelease && <span className="proj-badge">{t.projects.preRelease}</span>}
       <div className="proj-overlay">

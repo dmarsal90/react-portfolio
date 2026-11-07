@@ -29,7 +29,7 @@ export const CaseStudy = ({ project: { key, gallery = [] }, show, onHide }) => {
           <div className="case-study-gallery">
             {gallery.map((src, i) => (
               <figure key={src}>
-                <img src={src} alt={text.shots[i]} loading="lazy" />
+                <img src={src} alt={text.shots[i]} width="1280" height="800" loading="lazy" />
                 <figcaption>{text.shots[i]}</figcaption>
               </figure>
             ))}

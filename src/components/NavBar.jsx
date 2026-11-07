@@ -11,6 +11,8 @@ const links = ["home", "experience", "skills", "about", "projects"];
 export const NavBar = () => {
   const { t, locale } = useI18n();
   const navRef = useRef(null);
+  const rootRef = useRef(null);
+  const [expanded, setExpanded] = useState(false);
   const [bar, setBar] = useState(null);
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -20,6 +22,15 @@ export const NavBar = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Collapse the mobile menu on a tap outside it or on Escape.
+  useEffect(() => {
+    if (!expanded) return;
+    const close = (e) => { if (e.type === "keydown" ? e.key === "Escape" : !rootRef.current?.contains(e.target)) setExpanded(false); };
+    document.addEventListener("pointerdown", close);
+    document.addEventListener("keydown", close);
+    return () => { document.removeEventListener("pointerdown", close); document.removeEventListener("keydown", close); };
+  }, [expanded]);
 
   // Highlight the section that crosses the middle of the viewport while scrolling.
   useEffect(() => {
@@ -54,7 +65,7 @@ export const NavBar = () => {
   }, [activeLink, locale]);
 
   return (
-    <Navbar expand="xl" collapseOnSelect className={scrolled ? "scrolled" : ""}>
+    <Navbar ref={rootRef} expand="xl" expanded={expanded} onToggle={setExpanded} collapseOnSelect className={scrolled ? "scrolled" : ""}>
       <Container>
         <Navbar.Brand href="#home">
           <img src={logo} alt="David Marsal" />

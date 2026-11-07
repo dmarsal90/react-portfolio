@@ -1,7 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { ProjectCard } from "../components/ProjectCard";
 import TrackVisibility from "../components/TrackVisibility";
-import colorSharp2 from "../assets/img/color-sharp2.webp";
 import { projects } from "../data/projects";
 import { useI18n } from "../i18n";
 
@@ -25,7 +24,6 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2} alt="" width="466" height="744" loading="lazy" decoding="async" />
     </section>
   );
 };
